@@ -86,15 +86,17 @@ export default function WorldMap() {
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
-                  className="rounded border border-[#d6ffe0]/40 px-6 py-8 text-lg font-bold  rounded-full text-green-500 transition hover:bg-[#d6ffe0] hover:text-black "
+                  className="rounded-full border border-[#d6ffe0]/40 px-6 py-3 text-lg font-bold text-green-500 transition hover:bg-[#d6ffe0] hover:text-black"
                 >
                   EXIT
                 </button>
-                <h1 className="text-center text-3xl font-bold  text-green-500 sm:text-5xl" style={{  fontFamily: "Cursov, cursive"
-                 }}>
+                <h1
+                  className="text-center text-3xl font-bold text-green-500 sm:text-5xl"
+                  style={{ fontFamily: "var(--font-handwriting), cursive" }}
+                >
                   Ones Land — World Map
                 </h1>
-               <div  ></div>  
+                <span aria-hidden="true" className="w-[92px]" />
               </div>
 
               <div className="relative mx-auto w-full  flex-1">
@@ -112,7 +114,7 @@ export default function WorldMap() {
                     alt="Ones Ben Rhaime standing in Ones Land"
                     width={170}
                     height={250}
-                    className="w-150 sm:w-164   text-center flex items-center justify-center mx-auto absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                    className="absolute left-1/2 top-1/2 w-32 -translate-x-1/2 -translate-y-1/2 sm:w-40"
                   />
 
                   {zones.map((zone) => {
