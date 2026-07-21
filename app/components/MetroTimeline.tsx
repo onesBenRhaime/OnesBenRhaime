@@ -7,6 +7,8 @@ export type MetroStation = {
   year: string;
   title: string;
   subtitle: string;
+  location?: string;
+  detail?: string;
 };
 
 export default function MetroTimeline({ stations }: { stations: MetroStation[] }) {
@@ -37,7 +39,13 @@ export default function MetroTimeline({ stations }: { stations: MetroStation[] }
             <span className="metro-year">{station.year}</span>
             <div className="metro-info">
               <h3>{station.title}</h3>
-              <p>{station.subtitle}</p>
+              <p className="metro-company">{station.subtitle}</p>
+              {station.location && (
+                <p className="metro-location">{station.location}</p>
+              )}
+              {station.detail && (
+                <p className="metro-detail">{station.detail}</p>
+              )}
             </div>
           </motion.div>
         ))}

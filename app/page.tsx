@@ -1,14 +1,18 @@
 import Image from "next/image";
 import {
   ArrowRight,
+  Boxes,
   BrainCircuit,
   BriefcaseBusiness,
   Code2,
   Database,
   Download,
+  Gauge,
+  GitBranch,
   Github,
   GraduationCap,
   HeartPulse,
+  Landmark,
   Layers3,
   Linkedin,
   Mail,
@@ -20,8 +24,12 @@ import {
 import BootSequence from "./components/BootSequence";
 import GitHubShowcase from "./components/GitHubShowcase";
 import MetroTimeline from "./components/MetroTimeline";
+import ProjectShowcase from "./components/ProjectShowcase";
 import RevealSection from "./components/RevealSection";
+import ScrollProgress from "./components/ScrollProgress";
+import SiteNav from "./components/SiteNav";
 import WorldMap from "./components/WorldMap";
+import { districtProjects } from "./projects";
 
 const featuredProject = {
   title: "PrimeProfs",
@@ -31,34 +39,46 @@ const featuredProject = {
   tags: ["React", "Next.js", "NestJS", "PostgreSQL", "AI Integration"]
 };
 
-const districtProjects = [
-  {
-    title: "Prime Study",
-    label: "AI Study Companion",
-    description: "Guided learning experiences powered by AI.",
-    tags: ["AI Product", "Learning UX", "Product Engineering"]
-  },
-  {
-    title: "Recruitment Automation Platform",
-    label: "Built at Orange Digital Center",
-    description:
-      "A platform for streamlining recruitment workflows and operational decision-making.",
-    tags: ["React", "Node.js", "MongoDB"]
-  },
-  {
-    title: "My Health Network",
-    label: "Healthcare Dashboard",
-    description:
-      "A focused dashboard experience for healthcare data visibility and coordination.",
-    tags: ["ReactJS", "Dashboard", "Healthcare"]
-  }
-];
-
 const timelineStations = [
   {
-    year: "2022",
-    title: "Full Stack Developer",
-    subtitle: "Orange Digital Center"
+    year: "Jun – Jul 2021",
+    title: "Web Developer · Internship",
+    subtitle: "Cloud Master Tunisie",
+    location: "Tunis, Tunisia",
+    detail:
+      "Built an educational platform for learning programming through interactive exercises."
+  },
+  {
+    year: "Aug – Sep 2021",
+    title: "Software Testing · Internship",
+    subtitle: "BIAT — Banque Internationale Arabe de Tunisie",
+    location: "Tunisia · Java, Katalon Studio",
+    detail:
+      "Designed and automated functional test scenarios to validate web applications and improve software quality."
+  },
+  {
+    year: "Feb – Jun 2022",
+    title: "Full-Stack JS Engineer · End-of-studies internship",
+    subtitle: "Orange Digital Center",
+    location: "Tunis, Tunisia · On-site",
+    detail:
+      "Built a recruitment-automation and candidate-assessment platform — pre-selection, online testing and evaluation to streamline hiring for recruiters and candidates."
+  },
+  {
+    year: "Jul – Aug 2023",
+    title: "Web Developer · Internship",
+    subtitle: "Paysan du Cap Bon",
+    location: "Tunis, Tunisia · On-site",
+    detail:
+      "Developed a billing-system automation application with Symfony 5 and MySQL."
+  },
+  {
+    year: "Jun – Jul 2024",
+    title: "Full-Stack Developer · Internship",
+    subtitle: "Smartovate",
+    location: "London, UK · Remote",
+    detail:
+      "Contributed to Smartovate's AI-driven productivity product for startups and teams."
   },
   {
     year: "2024",
@@ -66,9 +86,12 @@ const timelineStations = [
     subtitle: "Caustaza Group LTD"
   },
   {
-    year: "2024 - Present",
-    title: "Full Stack Product Engineer",
-    subtitle: "PrimeProfs"
+    year: "2024 – Present",
+    title: "Full-Stack Product Engineer",
+    subtitle: "PrimeProfs",
+    location: "EdTech · Product Engineering",
+    detail:
+      "Building PrimeProfs, an AI-assisted EdTech platform students use to learn more effectively."
   }
 ];
 
@@ -92,6 +115,85 @@ const skillGroups = [
     title: "Product Engineering",
     icon: Rocket,
     items: ["System Design", "Performance", "Architecture", "AI Integration"]
+  }
+];
+
+const services = [
+  {
+    icon: Rocket,
+    title: "Product Engineering",
+    description:
+      "From idea to shipped product — full-stack builds with React, Next.js and NestJS, shaped around real user problems."
+  },
+  {
+    icon: BrainCircuit,
+    title: "AI Integration",
+    description:
+      "Bringing AI into products in a useful way — assisted learning, smart workflows and features people actually reach for."
+  },
+  {
+    icon: Gauge,
+    title: "Performance & Architecture",
+    description:
+      "Scalable system design and fast, reliable web apps that stay maintainable as the product and team grow."
+  }
+];
+
+const techStack = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "NestJS",
+  "Node.js",
+  "Python",
+  "PostgreSQL",
+  "MongoDB",
+  "MySQL",
+  "System Design",
+  "AI Integration"
+];
+
+const labProjects = [
+  {
+    icon: Boxes,
+    year: "2023 – 2024",
+    title: "Microservice Architecture",
+    description:
+      "A dynamic, high-performance microservices system for university room-reservation, spanning Spring Boot, Node.js and Angular, with H2 and MySQL to fit each service's needs.",
+    tags: ["Spring Boot", "Node.js", "Angular", "Microservices"],
+    repos: [
+      {
+        label: "Distributed app",
+        url: "https://github.com/onesBenRhaime/Application-Web-Distribues-MicroService-Spring"
+      },
+      {
+        label: "Purchase service",
+        url: "https://github.com/onesBenRhaime/4TWIN1-G1-Backend-Achat/tree/onesBenRhaime-4TWIN1-G1"
+      }
+    ]
+  },
+  {
+    icon: GitBranch,
+    year: "2023 – 2024",
+    title: "CI/CD DevOps Pipeline",
+    description:
+      "A continuous integration and deployment pipeline with Jenkins and Docker, plus monitoring through Prometheus & Grafana and automated email alerting.",
+    tags: ["Jenkins", "Docker", "Prometheus", "Grafana"],
+    repos: []
+  },
+  {
+    icon: Landmark,
+    year: "2022 – 2023",
+    title: "MazeBank",
+    description:
+      "An integrated multi-client banking application — JavaFX, Symfony and CodenameOne clients over a shared MySQL database — handling banking services and account features.",
+    tags: ["Symfony", "JavaFX", "CodenameOne", "MySQL"],
+    repos: [
+      {
+        label: "Repository",
+        url: "https://github.com/onesBenRhaime/MazeBank--Scared-To-Compile"
+      }
+    ]
   }
 ];
 
@@ -121,20 +223,11 @@ const impactItems = [
 export default function Home() {
   return (
     <main>
+      <ScrollProgress />
       <BootSequence />
       <WorldMap />
 
-      <nav className="nav" aria-label="Primary navigation">
-        <a className="brand" href="#top" aria-label="Ones home">
-          Ones
-        </a>
-        <div className="nav-links">
-          <a href="#work">Work</a>
-          <a href="#experience">Experience</a>
-          <a href="#github">GitHub</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
+      <SiteNav />
 
       <section className="hero" id="top">
         <div className="hero-copy">
@@ -160,7 +253,7 @@ export default function Home() {
 
         <div className="hero-visual" aria-label="Ones brand illustration">
           <Image
-            src="/assets/ones-banner.png"
+            src="/assets/ones-land/ones-3.png"
             alt="Black and white personal brand banner for Ones"
             width={1584}
             height={396}
@@ -241,22 +334,93 @@ export default function Home() {
         <div className="section-heading">
           <span className="zone-label zone-label--react">⚛️ React District</span>
           <h2>Product-shaped engineering</h2>
+          <p className="section-lead">
+            A selection of platforms I&apos;ve built end to end — click any
+            preview to explore the screenshots.
+          </p>
         </div>
-        <div className="project-grid">
-          {districtProjects.map((project) => (
-            <article className="project-card" key={project.title}>
-              <span>{project.label}</span>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <div className="tag-row">
-                {project.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
-              </div>
-            </article>
-          ))}
+        <ProjectShowcase projects={districtProjects} />
+      </RevealSection>
+
+      <RevealSection className="section lab-section" id="lab">
+        <div className="section-heading">
+          <span className="zone-label zone-label--ailab">🧪 Engineering Lab</span>
+          <h2>Systems &amp; academic builds</h2>
+          <p className="section-lead">
+            Deeper engineering work — microservices, DevOps and multi-client
+            apps — with the source on GitHub.
+          </p>
+        </div>
+        <div className="lab-grid">
+          {labProjects.map((project) => {
+            const Icon = project.icon;
+            return (
+              <article className="lab-card" key={project.title}>
+                <div className="lab-head">
+                  <span className="lab-icon">
+                    <Icon aria-hidden="true" />
+                  </span>
+                  <span className="lab-year">{project.year}</span>
+                </div>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <div className="tag-row">
+                  {project.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+                {project.repos.length > 0 && (
+                  <div className="lab-repos">
+                    {project.repos.map((repo) => (
+                      <a
+                        key={repo.url}
+                        className="lab-repo"
+                        href={repo.url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Github aria-hidden="true" />
+                        {repo.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </article>
+            );
+          })}
         </div>
       </RevealSection>
+
+      <RevealSection className="section services-section" id="services">
+        <div className="section-heading">
+          <span className="zone-label zone-label--ailab">🛠️ Workshop</span>
+          <h2>How I can help</h2>
+        </div>
+        <div className="services-grid">
+          {services.map((service) => {
+            const Icon = service.icon;
+            return (
+              <article className="service-card " key={service.title}>
+                <span className="service-icon">
+                  <Icon aria-hidden="true" />
+                </span>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </article>
+            );
+          })}
+        </div>
+      </RevealSection>
+
+      <div className="marquee" aria-label="Tech stack">
+        <div className="marquee-track">
+          {[...techStack, ...techStack].map((tech, index) => (
+            <span className="marquee-item" key={`${tech}-${index}`}>
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
 
       <RevealSection className="section timeline-section" id="experience">
         <div className="section-heading">
