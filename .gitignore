@@ -11,6 +11,9 @@ pnpm-debug.log*
 .docs/
 docs/
 
+./claude.md
+
+claude*
 CLAUDE.md
 ./CLAUDE.md
 
