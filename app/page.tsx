@@ -1,5 +1,6 @@
 import Image from "next/image";
 import {
+  Activity,
   ArrowRight,
   Boxes,
   BrainCircuit,
@@ -136,6 +137,12 @@ const services = [
     title: "Performance & Architecture",
     description:
       "Scalable system design and fast, reliable web apps that stay maintainable as the product and team grow."
+  },
+  {
+    icon: Activity,
+    title: "Maintenance & Monitoring",
+    description:
+      "Keeping websites healthy over time — code audits, performance tuning, ongoing maintenance and monitoring so your product stays fast, reliable and up to date."
   }
 ];
 
@@ -251,12 +258,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-visual" aria-label="Ones brand illustration">
+        <div aria-label="Ones brand illustration">
           <Image
-            src="/assets/ones-land/ones-3.png"
+            src="/assets/ones-land/ones-main.png"
             alt="Black and white personal brand banner for Ones"
             width={1584}
-            height={396}
+            height={496}
             priority
           />
         </div>
