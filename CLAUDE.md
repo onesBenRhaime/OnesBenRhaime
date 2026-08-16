@@ -693,6 +693,29 @@ Therefore:
 
 ---
 
+## 20. Agent Roster & Orchestration
+
+This repo has specialized subagents in `.claude/agents/`. Route to them instead of doing everything in the main session — each one carries deeper task-specific instructions than fit here, and keeps unrelated context out of the main conversation.
+
+| Task looks like... | Use | Notes |
+|---|---|---|
+| "Is this job good for me / should I apply?", CV tailoring to a posting, recruiter/LinkedIn messages, interview prep, salary/company research | **career-agent** | Has its own WebSearch/WebFetch — don't split company research into a separate step, it handles that itself. |
+| "Explain X", "why would I use Y", code/architecture review as a learning moment, prepping a technical-interview topic | **technical-mentor** | Calibrates to her actual level from `knowledge/skills.md`; grounds examples in her real code when possible. |
+| A recurring/repetitive task, "should I build an agent for this?", designing a new agent | **ai-agent-architect** | Always route here *before* creating a new subagent yourself — it checks for overlap and simpler alternatives first. |
+| An actual code change — feature, bug fix, refactor, test, review, docs — in this repo or any of her product repos | **coding-agent** | Reads the target repo's own CLAUDE.md/README first; treats `projects/<name>/context.md` here as a secondary source, not authoritative over the real code. |
+| SEO work (technical audit, GSC/GA4 data, sitemap, schema, drift monitoring) | **`claude-seo` skills** (`/seo-google`, `/seo-technical`, `/seo-sitemap`, `/seo-drift`, `/seo-schema`, etc.) | Not a bespoke agent — see `projects/proplastik/context.md` §"SEO tooling" for which skill fits which task and the project facts to feed it. |
+| Open-ended research (a technology, a company, a market) not tied to a career or coding task | No dedicated agent yet | Use WebSearch/WebFetch directly, or route through whichever specialist above is closest to the actual goal. |
+
+### Multi-step requests
+
+Most requests map to exactly one agent above — dispatch directly rather than manufacturing a multi-agent pipeline. If a request genuinely spans two domains (e.g. "build me an agent that tracks ProPlastik's rankings weekly"), route the *design* question to `ai-agent-architect` first; it will tell you if the SEO half should lean on the existing `claude-seo` skills rather than new code.
+
+### Adding a new agent
+
+New subagents go in `.claude/agents/<name>.md` with proper frontmatter (`name`, `description` with clear trigger phrasing, `tools`, `model`). Add a row to the table above in the same change so routing stays current — an agent that exists but isn't in this table won't reliably get used.
+
+---
+
 ## Final instruction
 
 Think of Ones as a real engineer with hands-on full-stack, web, AI, SEO and infrastructure experience—not merely as a student.
