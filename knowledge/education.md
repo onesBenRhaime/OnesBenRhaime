@@ -1,15 +1,17 @@
 # Education
 
 > Status tags: **Confirmed** · **Inferred** · **Unknown**. See CLAUDE.md §11 for source priority.
+> Source: `mes-docs/cv.md`, supplied 2026-08-16.
 
-- Engineering degree: ESPRIT, TWIN specialization, 2025 — Confirmed (per portfolio: "Computer Engineering Degree — With Honors")
-- Earlier degree: Bachelor / Licence in Computer Science, ISET Kairouan, 2022 — Confirmed
-- Academic path: roughly 3 years licence + 3 years engineering studies — Inferred, described by Ones in prior conversation, not yet cross-checked against a diploma/transcript
-- Honors: Computer Engineering Degree "With Honors" — Confirmed (portfolio)
+- 2025 — Diplôme d'Ingénieure en Informatique, École Supérieure Privée d'Ingénierie et de Technologies (ESPRIT) — **Mention Très Bien** — Confirmed (CV). "Mention Très Bien" is the top honors tier in the Tunisian/French system — more precise than the portfolio's generic "With Honors".
+- 2022 — Licence Nationale en Technologies de l'Informatique, Institut Supérieur des Études Technologiques — **Mention Bien** — Confirmed (CV). CV does not specify the ISET campus by name; "ISET Kairouan" was stated in prior conversation but is not confirmed by this document.
+- TWIN specialization at ESPRIT — Inferred/prior conversation, not confirmed by CV (CV lists only the diploma title, no specialization track).
+- Academic path (~3 years licence + 3 years engineering) — Inferred, consistent with 2022/2025 dates but not stated verbatim anywhere.
 
 ## Open items (Unknown)
-- Exact graduation dates (month/year for both degrees)
-- Exact diploma title/wording as it appears on the official document
-- Any additional certifications
+- Exact ISET campus (Kairouan vs. elsewhere)
+- ESPRIT specialization track name as it appears officially (TWIN vs. other)
+- Exact graduation month for both degrees (CV gives year only)
+- Any additional certifications beyond the two degrees
 
 See also: [profile.md](profile.md), [achievements.md](achievements.md)

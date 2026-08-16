@@ -3,6 +3,9 @@
 > Status tags: **Confirmed** · **Inferred** · **Unknown**. See CLAUDE.md §11 for source priority.
 > Evaluation workflow (how to score a job posting against this profile) lives in CLAUDE.md §10 — this file is the input data for that workflow, not the process.
 
+## Current title — Confirmed (CV)
+**Full-Stack Product Engineer** at MK Talent (PrimeProfs), since 09/2024. Use this as her actual current title, not a generic "Full-Stack JavaScript Engineer" label, when precision matters (e.g. LinkedIn headline, CV header, formal bio).
+
 ## Target positioning — Inferred from repeated prior conversation, not a written statement from Ones
 - Full-Stack Developer / Full-Stack JavaScript Engineer
 - Frontend Developer

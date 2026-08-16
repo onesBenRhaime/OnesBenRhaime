@@ -4,7 +4,7 @@
 > Full detail lives in CLAUDE.md §9 (Communication & Language) and §2 (Tone & Personality) — this file is a quick-reference summary.
 
 ## Languages — Confirmed
-French, English, Tunisian Arabic.
+French, English, Tunisian Arabic. Per CV (`mes-docs/cv.md`): Français — Professionnel (B2), Anglais — Professionnel (B2). Arabic isn't listed on the CV (likely omitted as native/assumed). Note B2 is "professional working proficiency," not native fluency — don't overstate her language level in an English/French cover letter beyond what the CV claims, even though her actual working fluency in conversation may read higher.
 
 ## Style — Confirmed
 - Simple, natural English for technical explanations.

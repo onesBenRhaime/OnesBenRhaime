@@ -17,7 +17,7 @@ The user will later provide her **CV, personal information, portfolio, and other
 - Engineering degree: ESPRIT, 2025
 - Earlier degree: Bachelor / Licence in Computer Science from ISET Kairouan, 2022
 - Academic path described by the user as roughly **3 years of licence + 3 years of engineering studies**
-- Professional experience includes internship/PFE work followed by collaboration/employment with **PrimeProfs**
+- Current employer: **MK Talent**, as Full-Stack Product Engineer since 09/2024, building **PrimeProfs** (the product, not the employer) — Confirmed via CV, see `knowledge/experience.md`
 - Current professional focus includes full-stack development, AI integration, SEO/web projects, infrastructure, and AI-assisted engineering workflows.
 
 ### Important verification rule
@@ -139,7 +139,7 @@ Do not exaggerate seniority. Present concrete responsibilities, technologies, im
 
 ## 5. PrimeProfs
 
-**PrimeProfs** is one of Ones's main professional projects and should be treated as an important portfolio case study.
+**PrimeProfs** is one of Ones's main professional projects and should be treated as an important portfolio case study. It's the product she builds at her current employer, **MK Talent** — PrimeProfs itself is not the employer.
 
 ### Product
 A Franco-Tunisian EdTech platform connecting students and teachers/professors.
@@ -192,7 +192,7 @@ When describing the project, focus on actual ownership and measurable results wh
 
 ## 6. ProPlastik
 
-**ProPlastik** is another important project and should be treated as a production web/SEO/migration case study.
+**ProPlastik** is another important project and should be treated as a production web/SEO/migration case study. Note: ProPlastik does not appear on Ones's current CV (`mes-docs/cv.md`) — confirm its current status with her before presenting it as active professional experience in an official document (CV, LinkedIn, cover letter).
 
 ### Project
 A company website redesign and migration involving:
