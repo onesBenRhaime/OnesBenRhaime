@@ -97,5 +97,18 @@ export const districtProjects: Project[] = [
       "/assets/projects/paysan/3.jpg",
       "/assets/projects/paysan/4.jpg"
     ]
+  },
+  {
+    slug: "proplastik",
+    title: "ProPlastik",
+    label: "Website Redesign & SEO Migration",
+    description:
+      "A company website redesign and migration from a legacy WordPress site to Next.js and Sanity CMS: implemented the Figma design, ran an SEO-preserving migration with redirects for existing URLs, handled the DNS cutover and deployed the new site on Vercel. Optimized performance, accessibility and SEO to perfect Lighthouse scores on both mobile and desktop — 100 Performance, 96 Accessibility, 100 Best Practices and 100 SEO, up from 60 / 70 / 90 / 60 on the legacy site.",
+    tags: ["Next.js", "SEO", "Performance"],
+    liveUrl: "https://proplastik.tn",
+    shots: [
+      "/assets/projects/proplastik/1.png",
+      "/assets/projects/proplastik/2.png"
+    ]
   }
 ];

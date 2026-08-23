@@ -22,9 +22,10 @@ These may simply be omitted from a one-page CV for space/relevance, or the CV ma
 ## Dates that differ between sources
 - Smartovate/Caustaza: portfolio says Jun–Jul 2024, CV says 06/2024–08/2024. Use the CV date range for anything CV-facing; flag the gap if asked to reconcile publicly.
 
+**Confirmed 2026-08-23:** ProPlastik is part of her MK Talent scope of work (not freelance/separate). Safe to list under the MK Talent role in CV/resume updates. Also confirmed: she built the **PrimeProfs mobile app in React Native from scratch**, currently in testing/deployment — add as a MK Talent bullet, phrased as in-progress (not shipped).
+
 ## Open items (Unknown)
 - Exact day-level start/end dates (CV gives month/year only)
 - Whether MK Talent / PrimeProfs is her only current engagement, or she has other concurrent work
-- Status/timeline of ProPlastik — **it does not appear anywhere on this CV.** CLAUDE.md §6 treats it as a significant project, but it may be freelance/side work not yet added to the CV, or it may need re-scoping. Ask Ones directly before describing ProPlastik as current professional experience in an official document.
 
 See also: [projects.md](projects.md), [profile.md](profile.md)
