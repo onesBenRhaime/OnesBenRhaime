@@ -1,17 +1,13 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  ChevronLeft,
-  ChevronRight,
-  ExternalLink,
-  Github,
-  Maximize2,
-  X
-} from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, type CSSProperties } from "react";
 import type { Project } from "../projects";
+import SwapLabel from "./SwapLabel";
+
+const TILTS = [-2.5, 2, -1.5, 3, -3, 1.5];
 
 type Lightbox = { project: number; shot: number } | null;
 
@@ -54,86 +50,61 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
 
   return (
     <>
-      <div className="showcase-grid">
+      <div className="work-grid">
         {projects.map((project, projectIndex) => (
-          <article className="showcase-card" key={project.slug}>
+          <article
+            className="work-card"
+            key={project.slug}
+            style={{ "--tilt": `${TILTS[projectIndex % TILTS.length]}deg` } as CSSProperties}
+          >
             <button
               type="button"
-              className="showcase-media"
+              className="work-media"
               onClick={() => setLightbox({ project: projectIndex, shot: 0 })}
               aria-label={`Open ${project.title} screenshots`}
             >
-              <span className="showcase-chrome" aria-hidden="true">
-                <span />
-                <span />
-                <span />
+              <span className="work-index" aria-hidden="true">
+                {String(projectIndex + 1).padStart(2, "0")}
               </span>
+              <span className="work-arrow" aria-hidden="true">↗</span>
               <Image
                 src={project.shots[0]}
                 alt={`${project.title} screenshot`}
                 width={1920}
                 height={1080}
-                className="showcase-cover"
+                className="work-cover"
               />
-              <span className="showcase-zoom" aria-hidden="true">
-                <Maximize2 />
-              </span>
+              <span className="work-caption">{project.caption}</span>
             </button>
 
-            <div className="showcase-body">
-              <span className="showcase-label">{project.label}</span>
+            <div className="work-body">
               <h3>{project.title}</h3>
-              <p>{project.description}</p>
-
-              <div className="showcase-thumbs">
-                {project.shots.slice(1).map((shot, index) => (
-                  <button
-                    type="button"
-                    key={shot}
-                    className="showcase-thumb"
-                    onClick={() =>
-                      setLightbox({ project: projectIndex, shot: index + 1 })
-                    }
-                    aria-label={`View ${project.title} screenshot ${index + 2}`}
-                  >
-                    <Image
-                      src={shot}
-                      alt=""
-                      width={480}
-                      height={300}
-                    />
-                  </button>
-                ))}
-              </div>
-
-              <div className="tag-row">
+              <p className="work-label">{project.label}</p>
+              <ul className="tag-row" aria-label="Stack">
                 {project.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
+                  <li key={tag}>{tag}</li>
                 ))}
-              </div>
-
+              </ul>
               {(project.liveUrl || project.githubUrl) && (
-                <div className="showcase-links">
+                <div className="work-links">
                   {project.liveUrl && (
                     <a
-                      className="showcase-link showcase-link--live"
+                      className="bracket"
                       href={project.liveUrl}
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <ExternalLink aria-hidden="true" />
-                      Visit live
+                      <SwapLabel>visit live</SwapLabel>
                     </a>
                   )}
                   {project.githubUrl && (
                     <a
-                      className="showcase-link"
+                      className="bracket"
                       href={project.githubUrl}
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <Github aria-hidden="true" />
-                      Code
+                      <SwapLabel>read code</SwapLabel>
                     </a>
                   )}
                 </div>
@@ -195,6 +166,7 @@ export default function ProjectShowcase({ projects }: { projects: Project[] }) {
               />
               <figcaption className="lightbox-caption">
                 <strong>{activeProject.title}</strong>
+                <p>{activeProject.description}</p>
                 <span>
                   {lightbox.shot + 1} / {activeProject.shots.length}
                 </span>
