@@ -1,6 +1,6 @@
 # Goals
 
-> Status tags: **Confirmed** · **Inferred** · **Unknown**. See CLAUDE.md §11 for source priority.
+> Status tags: **Confirmed** · **Inferred** · **Unknown**. See CLAUDE.md "Source of truth" for source priority.
 
 ## Career goals — Inferred
 - Advance from intern/contributor positioning to a recognized Full-Stack Engineer role.
@@ -8,7 +8,7 @@
 
 ## AI/automation goals — Confirmed direction, details evolving
 - Building a personal AI agent system (this repo) to act as a technical + career copilot — see CLAUDE.md's Purpose section and the phased plan discussed 2026-08-16.
-- Interested in agents connected to Google Search Console, GA4, Vercel, Slack for SEO/monitoring workflows — see CLAUDE.md §7.
+- Interested in agents connected to Google Search Console, GA4, Vercel, Slack for SEO/monitoring workflows — see CLAUDE.md "Designing agents".
 - Interested in combining Claude Code with OpenAI Codex in her workflow.
 
 ## Current build plan (as of 2026-08-16)

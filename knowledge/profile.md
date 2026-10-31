@@ -1,6 +1,6 @@
 # Profile
 
-> Facts only. Process/instructions live in CLAUDE.md. Source-of-truth order: CLAUDE.md §11.
+> Facts only. Process/instructions live in CLAUDE.md. Source-of-truth order: CLAUDE.md "Source of truth".
 > Status tags: **Confirmed** (from CV/portfolio/direct statement) · **Inferred** (reasonable read of context) · **Unknown** (needs Ones to confirm).
 
 ## Identity — Confirmed (source: `mes-docs/cv.md`, supplied 2026-08-16)
@@ -21,6 +21,9 @@ Translation for reference (not a verified official EN version): "Full-Stack Soft
 - Core specialization: React, Next.js, NestJS, Node.js — Confirmed
 - Current focus: full-stack development, AI integration, real-time systems, SaaS — Confirmed (CV)
 - Narrative arc to use by default: student → multiple internships → Full-Stack Product Engineer (current) — Confirmed by timeline, see [experience.md](experience.md). She is past "junior/intern" positioning now — has held her current title since 09/2024.
+
+## Public positioning — Confirmed (portfolio)
+The portfolio presents her as **Software Engineer · Product Builder · Problem Solver**, focused on product engineering, EdTech, AI-powered educational products and scalable web apps, with PrimeProfs as the flagship. Highlights shown: 2nd Place ATS Hackathon 2025, 3rd Place 2024, Computer Engineering Degree with honors, 91+ GitHub repositories.
 
 ## Open items (Unknown)
 - Work authorization / international mobility status

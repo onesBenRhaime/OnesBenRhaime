@@ -1,15 +1,15 @@
 # Preferences
 
-> Status tags: **Confirmed** · **Inferred** · **Unknown**. See CLAUDE.md §11 for source priority.
+> Status tags: **Confirmed** · **Inferred** · **Unknown**. See CLAUDE.md "Source of truth" for source priority.
 > These are working preferences (how Ones likes things built/decided), distinct from communication style — see [communication.md](communication.md).
 
 ## Engineering preferences — Confirmed
-- Cookies over localStorage for authentication tokens. Keep this unless she explicitly changes it (CLAUDE.md §13).
-- Prefers incremental, focused changes over broad rewrites (CLAUDE.md §8).
-- Prefers practical solutions over unnecessary complexity (CLAUDE.md §17).
+- Cookies over localStorage for authentication tokens. Keep this unless she explicitly changes it (CLAUDE.md "Engineering work").
+- Prefers incremental, focused changes over broad rewrites (CLAUDE.md "Engineering work").
+- Prefers practical solutions over unnecessary complexity (CLAUDE.md "Rules").
 
 ## AI-agent design preferences — Confirmed (stated design philosophy)
-- Agents should have a clear objective, defined inputs/outputs/tools/permissions, and explicit failure modes (CLAUDE.md §7).
+- Agents should have a clear objective, defined inputs/outputs/tools/permissions, and explicit failure modes (CLAUDE.md "Designing agents").
 - Prefer structured outputs over free text.
 - Keep secrets/API keys out of prompts and source files.
 - Never fabricate data when a connected service could be queried instead.

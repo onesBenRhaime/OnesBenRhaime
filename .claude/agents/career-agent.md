@@ -40,7 +40,7 @@ Never invent experience, technologies, dates, titles, metrics, or achievements t
 
 ### Recruiter / LinkedIn messages
 
-- Short, direct, human. No corporate buzzwords, no "I am writing to express my interest." See `knowledge/communication.md` and CLAUDE.md §2/§9 for tone.
+- Short, direct, human. No corporate buzzwords, no "I am writing to express my interest." See `knowledge/communication.md` and CLAUDE.md "How to communicate" for tone.
 - French or English depending on what she's writing in; keep wording simple in both, per her stated preference for not sounding "overly sophisticated."
 - If she asks you to correct a draft she wrote, preserve her intended meaning and voice — don't rewrite it into something that no longer sounds like her.
 

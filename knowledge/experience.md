@@ -1,7 +1,7 @@
 # Experience
 
-> Status tags: **Confirmed** · **Inferred** · **Unknown**. See CLAUDE.md §11 for source priority.
-> Portfolio: https://ones-benrhaime.vercel.app/. CV: `mes-docs/cv.md` (supplied 2026-08-16) — **authoritative for CV-specific claims** per CLAUDE.md §11.
+> Status tags: **Confirmed** · **Inferred** · **Unknown**. See CLAUDE.md "Source of truth" for source priority.
+> Portfolio: https://ones-benrhaime.vercel.app/. CV: `mes-docs/cv.md` (supplied 2026-08-16) — **authoritative for CV-specific claims** per CLAUDE.md "Source of truth".
 
 ## Timeline — Confirmed by CV, use this as the primary timeline
 

@@ -1,7 +1,7 @@
 # PrimeProfs — Engineering Context
 
-> Deep technical/engineering reference for whoever (agent or Ones) is about to work on PrimeProfs code. Career-facing summary lives in `knowledge/projects.md`; narrative context lives in `CLAUDE.md` §5 — this file is for architecture/ops detail neither of those carries.
-> Status tags: **Confirmed** · **Inferred** · **Unknown**. Source priority: CLAUDE.md §11.
+> Deep technical/engineering reference for whoever (agent or Ones) is about to work on PrimeProfs code. Career-facing summary lives in `knowledge/projects.md` — this file is the full engineering reference for the project.
+> Status tags: **Confirmed** · **Inferred** · **Unknown**. Source priority: CLAUDE.md "Source of truth".
 
 ## What it is
 Franco-Tunisian EdTech platform connecting students and teachers. Ones builds it as **Full-Stack Product Engineer at MK Talent** (MK Talent is the employer; PrimeProfs is the product — see `knowledge/experience.md`). Current role since 09/2024 — Confirmed (CV).
@@ -14,14 +14,14 @@ This looks like a **multi-repo setup**, not a monorepo — three separate codeba
 
 When `coding-agent` works on any of these, it should read that specific repo's own `CLAUDE.md`/`README.md` first — this file is a cross-repo orientation aid, not a replacement for it.
 
-## Stack — Confirmed (CV + CLAUDE.md §5)
+## Stack — Confirmed (CV + projects/primeprofs/context.md)
 - Frontend: Next.js, React, TypeScript
 - Backend: NestJS, PostgreSQL, Redis, WebSocket
 - Payments: Stripe, PayPal
 - Storage: AWS S3
 - Deployment: Docker
 
-## Features — Confirmed direction (CLAUDE.md §5), per-feature ownership Unknown
+## Features — Confirmed direction (projects/primeprofs/context.md), per-feature ownership Unknown
 Authentication, course reservation/booking calendar, student/professor messaging, real-time communication, resources, notifications, purchase/billing, credit system, first-course-free, AI-assisted educational features (adaptive learning — Confirmed on CV; quiz/flashcard/exercise generation — discussed/explored, not confirmed as shipped).
 
 ## AI direction
@@ -33,4 +33,4 @@ Adaptive-learning features: **Confirmed as something she's directly designed/bui
 - CI/CD setup for this specific product (CLAUDE.md's CircleCI/GitLab CI/CD mentions are general skill claims, not confirmed as PrimeProfs' actual pipeline)
 - Team size / whether she owns this alone or with others
 
-See also: `knowledge/experience.md`, `knowledge/projects.md`, `CLAUDE.md` §5.
+See also: `knowledge/experience.md`, `knowledge/projects.md`.

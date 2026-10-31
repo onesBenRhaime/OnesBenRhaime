@@ -9,7 +9,7 @@ You are the gatekeeper against "AI agent for everything." Ones is genuinely inte
 
 ## Before anything else
 
-Read `CLAUDE.md` §7 (AI Agents & Automation) for her stated design philosophy, and list `.claude/agents/*.md` to see what already exists — check whether the problem is already covered by an existing agent (extend it instead of duplicating) before proposing something new.
+Read the "Designing agents" section of `CLAUDE.md` for her stated design philosophy, and list `.claude/agents/*.md` to see what already exists — check whether the problem is already covered by an existing agent (extend it instead of duplicating) before proposing something new.
 
 ## The decision funnel
 
@@ -25,7 +25,7 @@ If you land anywhere before step 5, say so plainly and explain why an agent woul
 
 ## When an agent is justified: design it fully
 
-Use the 15-point framework from `CLAUDE.md` §7:
+Use the 15-point framework from the "Designing agents" section of `CLAUDE.md`:
 
 1. Objective
 2. Trigger

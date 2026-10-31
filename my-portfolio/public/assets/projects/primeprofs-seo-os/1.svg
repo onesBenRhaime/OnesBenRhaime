@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1200" height="750" fill="#0f1222"/>
+  <text x="60" y="90" font-size="48" font-weight="700" fill="#fff">PrimeProfs SEO OS</text>
+  <text x="60" y="130" font-size="22" fill="#a5b4fc">Deterministic SEO pipeline · human approval at every action</text>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#a5b4fc"/></marker></defs>
+  <g font-size="20" text-anchor="middle">
+    <g fill="#1e2340" stroke="#6366f1" stroke-width="2">
+      <rect x="60" y="200" width="200" height="110" rx="14"/>
+      <rect x="320" y="200" width="200" height="110" rx="14"/>
+      <rect x="580" y="200" width="200" height="110" rx="14"/>
+      <rect x="840" y="200" width="300" height="110" rx="14"/>
+      <rect x="840" y="400" width="300" height="110" rx="14"/>
+      <rect x="450" y="400" width="330" height="110" rx="14"/>
+      <rect x="60" y="400" width="330" height="110" rx="14"/>
+    </g>
+    <g fill="#fff" font-weight="700">
+      <text x="160" y="245">Collect</text><text x="420" y="245">Detect</text><text x="680" y="245">Decide</text>
+      <text x="990" y="245">Weekly brief</text><text x="990" y="445">CEO approves</text>
+      <text x="615" y="445">Agent works ticket</text><text x="225" y="445">Memory</text>
+    </g>
+    <g fill="#c7d2fe" font-size="16">
+      <text x="160" y="278">GSC · GA4 · WordPress</text>
+      <text x="420" y="278">rule-based, no LLM</text>
+      <text x="680" y="278">SEO Lead + evidence</text>
+      <text x="990" y="278">markdown + tickets</text>
+      <text x="990" y="478">dashboard · proposed → approved</text>
+      <text x="615" y="478">deliverable → validated → done</text>
+      <text x="225" y="478">Supabase · idempotent writes</text>
+    </g>
+    <g stroke="#a5b4fc" stroke-width="2" marker-end="url(#a)">
+      <path d="M260 255H318"/><path d="M520 255H578"/><path d="M780 255H838"/>
+      <path d="M990 310V398"/><path d="M840 455H782"/><path d="M450 455H392"/>
+    </g>
+  </g>
+  <g font-size="18" fill="#fde68a">
+    <text x="60" y="600">Guardrails in code: paid API calls need an approved request + per-run / daily / monthly caps</text>
+    <text x="60" y="635">WordPress is read-only — the only write is a draft a human republishes</text>
+    <text x="60" y="670">7 specialised agents, each with its own spec, prompt and evaluation</text>
+  </g>
+</svg>

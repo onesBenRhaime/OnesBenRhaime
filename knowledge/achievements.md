@@ -1,6 +1,6 @@
 # Achievements
 
-> Status tags: **Confirmed** · **Inferred** · **Unknown**. See CLAUDE.md §11 for source priority.
+> Status tags: **Confirmed** · **Inferred** · **Unknown**. See CLAUDE.md "Source of truth" for source priority.
 > All entries below are Confirmed from the current public portfolio (https://ones-benrhaime.vercel.app/) — not yet cross-checked against a CV or certificate.
 
 - 2nd Place, ATS Problem Solving Hackathon 2025

@@ -1,82 +1,62 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Caveat } from "next/font/google";
+import { IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
+import StatusBar from "./components/StatusBar";
+import { profile } from "./data";
 import "./globals.css";
 
-const jetbrainsMono = JetBrains_Mono({
+const mono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
   display: "swap"
 });
 
-const caveat = Caveat({
+const sans = IBM_Plex_Sans({
   subsets: ["latin"],
-  variable: "--font-handwriting",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
   display: "swap"
 });
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://onesbenrhaime.com";
+  "https://ones-benrhaime.vercel.app";
+
+const description =
+  "Ones Ben Rhaime — Full-Stack Product Engineer. EdTech and SaaS products with React, Next.js and NestJS, and AI agent systems with a human in the loop.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Ones Land | Ones Ben Rhaime",
-    template: "%s | Ones Ben Rhaime"
+    default: `${profile.name} — ${profile.title}`,
+    template: `%s — ${profile.name}`
   },
-  description:
-    "Welcome to Ones Land — explore the world behind the products of Ones Ben Rhaime, a software engineer building AI-powered educational products and scalable web applications.",
+  description,
   keywords: [
     "Ones Ben Rhaime",
-    "Software Engineer",
-    "Full Stack Developer",
-    "Product Engineer",
-    "React",
+    "Full-Stack Product Engineer",
     "Next.js",
     "NestJS",
-    "AI Integration",
+    "AI agents",
     "EdTech",
-    "PrimeProfs"
+    "PrimeProfs",
+    "TRACIZO"
   ],
-  authors: [{ name: "Ones Ben Rhaime" }],
-  creator: "Ones Ben Rhaime",
-  alternates: {
-    canonical: "/"
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large"
-    }
-  },
-  icons: {
-    icon: "/assets/ones-land/ones-no-bg.png",
-    apple: "/assets/ones-land/ones-no-bg.png"
-  },
+  authors: [{ name: profile.name }],
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
+  icons: { icon: "/assets/ones-land/ones-no-bg.png" },
   openGraph: {
-    title: "Ones Land | Ones Ben Rhaime",
-    description:
-      "Explore the world behind the products — AI-powered educational products and scalable web applications.",
+    title: `${profile.name} — ${profile.title}`,
+    description,
     url: "/",
-    siteName: "Ones Land",
+    siteName: profile.name,
     type: "website",
-    images: [
-      {
-        url: "/assets/ones-banner.png",
-        width: 1584,
-        height: 396,
-        alt: "Ones Ben Rhaime — personal brand banner"
-      }
-    ]
+    images: [{ url: "/assets/ones-banner.png", width: 1584, height: 396 }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ones Land | Ones Ben Rhaime",
-    description:
-      "Explore the world behind the products — AI-powered educational products and scalable web applications.",
+    title: `${profile.name} — ${profile.title}`,
+    description,
     images: ["/assets/ones-banner.png"]
   }
 };
@@ -84,42 +64,41 @@ export const metadata: Metadata = {
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Ones Ben Rhaime",
+  name: profile.name,
   url: siteUrl,
-  jobTitle: "Software Engineer / Product Engineer",
-  description:
-    "Software engineer building AI-powered educational products and scalable web applications.",
-  sameAs: [
-    "https://github.com/onesbenrhaime",
-    "https://www.linkedin.com/in/ones-ben-rhaime/"
-  ],
-  knowsAbout: [
-    "React",
-    "Next.js",
-    "NestJS",
-    "TypeScript",
-    "AI Integration",
-    "EdTech",
-    "System Design"
-  ]
+  jobTitle: profile.title,
+  worksFor: { "@type": "Organization", name: profile.company },
+  sameAs: [profile.github, profile.linkedin],
+  knowsAbout: ["React", "Next.js", "NestJS", "PostgreSQL", "AI agents", "EdTech", "SEO"]
 };
 
-const themeInitScript = `(function(){try{var t=localStorage.getItem('ones-theme');if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`;
+// Dark is the default; a stored choice wins.
+const themeInitScript = `(function(){try{var t=localStorage.getItem('ones-theme');if(t!=='light'&&t!=='dark'){t='dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
 
 export default function RootLayout({
   children
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${jetbrainsMono.variable} ${caveat.variable}`}>
+    <html lang="en" className={`${mono.variable} ${sans.variable}`} suppressHydrationWarning>
       <body>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
-        {children}
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
+        <StatusBar />
+        <main id="main">{children}</main>
+        <footer className="footer">
+          <span>
+            <span className="dot dot--live" aria-hidden="true" /> all systems nominal
+          </span>
+          <span>
+            © {new Date().getFullYear()} {profile.name} · {profile.location}
+          </span>
+        </footer>
       </body>
     </html>
   );

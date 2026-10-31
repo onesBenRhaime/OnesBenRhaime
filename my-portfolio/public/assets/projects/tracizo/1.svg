@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1200" height="750" fill="#F6F3E9"/>
+  <text x="60" y="90" font-size="54" font-weight="700" fill="#101427">TRACIZO</text>
+  <text x="60" y="135" font-size="24" fill="#3D43E8">La solution tout-en-un pour piloter votre activité</text>
+  <g font-size="22" fill="#101427">
+    <rect x="60" y="190" width="300" height="90" rx="16" fill="#fff" stroke="#101427" stroke-width="2"/>
+    <text x="210" y="230" text-anchor="middle" font-weight="700">Marketing site</text>
+    <text x="210" y="260" text-anchor="middle" font-size="18">Next.js · landing · beta form</text>
+    <rect x="450" y="190" width="300" height="90" rx="16" fill="#fff" stroke="#101427" stroke-width="2"/>
+    <text x="600" y="230" text-anchor="middle" font-weight="700">Restaurant app</text>
+    <text x="600" y="260" text-anchor="middle" font-size="18">Next.js · FR / AR (RTL)</text>
+    <rect x="840" y="190" width="300" height="90" rx="16" fill="#fff" stroke="#101427" stroke-width="2"/>
+    <text x="990" y="230" text-anchor="middle" font-weight="700">Back-office</text>
+    <text x="990" y="260" text-anchor="middle" font-size="18">Accounts · access · support</text>
+    <path d="M210 280 L600 360 M600 280 L600 360 M990 280 L600 360" stroke="#101427" stroke-width="2" fill="none"/>
+    <rect x="300" y="360" width="600" height="110" rx="16" fill="#3D43E8"/>
+    <text x="600" y="405" text-anchor="middle" font-weight="700" fill="#fff" font-size="26">NestJS API — modular monolith</text>
+    <text x="600" y="442" text-anchor="middle" fill="#D8FF55" font-size="18">Purchasing · Production · Inventory · Sales · Payments · Invoicing · Reporting</text>
+    <path d="M450 470 L300 540 M750 470 L900 540" stroke="#101427" stroke-width="2"/>
+    <rect x="120" y="540" width="360" height="80" rx="16" fill="#101427"/>
+    <text x="300" y="590" text-anchor="middle" fill="#F6F3E9" font-weight="700">PostgreSQL · multi-tenant</text>
+    <rect x="720" y="540" width="360" height="80" rx="16" fill="#F26A4F"/>
+    <text x="900" y="590" text-anchor="middle" fill="#fff" font-weight="700">Invoices · PDF · integrity proof</text>
+  </g>
+  <text x="60" y="700" font-size="18" fill="#101427">SaaS for independent restaurants in Tunisia — beta / pilot phase</text>
+</svg>

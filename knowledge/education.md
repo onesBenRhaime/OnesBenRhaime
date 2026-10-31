@@ -1,6 +1,6 @@
 # Education
 
-> Status tags: **Confirmed** · **Inferred** · **Unknown**. See CLAUDE.md §11 for source priority.
+> Status tags: **Confirmed** · **Inferred** · **Unknown**. See CLAUDE.md "Source of truth" for source priority.
 > Source: `mes-docs/cv.md`, supplied 2026-08-16.
 
 - 2025 — Diplôme d'Ingénieure en Informatique, École Supérieure Privée d'Ingénierie et de Technologies (ESPRIT) — **Mention Très Bien** — Confirmed (CV). "Mention Très Bien" is the top honors tier in the Tunisian/French system — more precise than the portfolio's generic "With Honors".

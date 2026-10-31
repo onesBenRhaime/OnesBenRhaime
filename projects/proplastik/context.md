@@ -1,10 +1,10 @@
 # ProPlastik — Engineering Context
 
-> Deep technical/engineering reference for whoever (agent or Ones) is about to work on ProPlastik. Career-facing summary lives in `knowledge/projects.md`; narrative context lives in `CLAUDE.md` §6 — this file is for architecture/ops detail neither of those carries.
-> Status tags: **Confirmed** · **Inferred** · **Unknown**. Source priority: CLAUDE.md §11.
+> Deep technical/engineering reference for whoever (agent or Ones) is about to work on ProPlastik. Career-facing summary lives in `knowledge/projects.md` — this file is the full engineering reference for the project.
+> Status tags: **Confirmed** · **Inferred** · **Unknown**. Source priority: CLAUDE.md "Source of truth".
 
-## Status flag — read this first
-**ProPlastik does not appear anywhere on Ones's current CV** (`mes-docs/cv.md`). Everything below comes from prior conversation, not from a verified document. Before doing any work here, or presenting this project in an official context (CV, LinkedIn, interview), confirm with Ones: is this active, past, freelance, or something else? Don't assume "current professional experience."
+## Status — Confirmed 2026-08-23
+ProPlastik is part of Ones's **MK Talent** role (not freelance), even though it isn't on the one-page CV. Technical details below come from prior conversation, not a verified document.
 
 ## What it is
 Company website redesign and migration: Figma design implementation, moving from a legacy WordPress/OVH site to Next.js + Sanity CMS on Vercel, with an SEO-preserving migration.
@@ -26,7 +26,10 @@ Company website redesign and migration: Figma design implementation, moving from
 - An AI agent was discussed/configured to help audit GSC queries and match old-to-new URLs — Unknown whether this became a real running agent or stayed a one-off script/manual process. If it exists, it's a candidate to formalize as a real subagent here (route through `ai-agent-architect` first).
 
 ## Infrastructure direction — historical, Unknown if current
-DigitalOcean Droplets, Ubuntu, Node.js, PostgreSQL, Redis, Nginx, PM2, Docker, Docker Compose, CircleCI, SSL/firewall config, separate prod + preprod environments. A previously discussed droplet spec: Frankfurt/FRA1, 1 vCPU, 2 GB RAM, 70 GB disk, Ubuntu 22.04. **Do not present these as the current production setup without verifying** — CLAUDE.md §14 already flags this.
+DigitalOcean Droplets, Ubuntu, Node.js, PostgreSQL, Redis, Nginx, PM2, Docker, Docker Compose, CircleCI, SSL/firewall config, separate prod + preprod environments. A previously discussed droplet spec: Frankfurt/FRA1, 1 vCPU, 2 GB RAM, 70 GB disk, Ubuntu 22.04. **Do not present these as the current production setup without verifying** — these are historical details.
+
+## SEO migration checklist
+For any future change: URL preservation, 301 redirects, canonicals, sitemap, robots.txt, indexing, internal links, metadata, structured data, Search Console monitoring, traffic/query continuity.
 
 ## SEO tooling — use the installed `claude-seo` skills, not a bespoke agent
 
@@ -42,9 +45,9 @@ A dedicated ProPlastik "SEO agent" would duplicate capability that's already ins
 Don't invoke any of these against the live `proplastik.tn` domain without Ones's go-ahead for the specific run — they're read-only/low-risk, but this file shouldn't be the trigger for an unprompted crawl of a client's production site.
 
 ## Open items (Unknown)
-- Current relationship to this project (employment status, freelance, ongoing vs. wrapped up)
+- Whether the project is still ongoing or wrapped up
 - Whether the GSC-audit agent mentioned above was ever actually built
 - Current traffic/indexing state post-migration
 - Whether the DigitalOcean infra plan was ever deployed, or stayed a plan
 
-See also: `knowledge/projects.md`, `CLAUDE.md` §6, `CLAUDE.md` §14.
+See also: `knowledge/projects.md`.

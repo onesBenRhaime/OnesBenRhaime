@@ -1,11 +1,11 @@
 # Projects
 
-> Status tags: **Confirmed** · **Inferred** · **Unknown**. See CLAUDE.md §11 for source priority.
-> Flagship / deep-context projects (PrimeProfs, ProPlastik) have full detail in CLAUDE.md §5–§6 — not duplicated here, just referenced.
+> Status tags: **Confirmed** · **Inferred** · **Unknown**. See CLAUDE.md "Source of truth" for source priority.
+> Flagship / deep-context projects (PrimeProfs, ProPlastik) have full detail in projects/*/context.md — not duplicated here, just referenced.
 
 ## Flagship
-- **PrimeProfs** — Franco-Tunisian EdTech platform, built at **MK Talent** (see [experience.md](experience.md) for the employer correction). Full architecture/features/AI direction: CLAUDE.md §5. Confirmed CV role: full-stack dev + maintenance across the stack, features for students/teachers/admins, AI-based adaptive-learning features, performance/security/quality work. Ownership breakdown at the feature level — Unknown, ask Ones per-feature.
-- **ProPlastik** — production web/SEO/DNS migration case study, full detail: CLAUDE.md §6. **Confirmed 2026-08-23: part of her MK Talent role** (not freelance/side work), even though it doesn't appear on the one-page CV — safe to present as MK Talent professional experience going forward.
+- **PrimeProfs** — Franco-Tunisian EdTech platform, built at **MK Talent** (see [experience.md](experience.md) for the employer correction). Full architecture/features/AI direction: projects/primeprofs/context.md. Confirmed CV role: full-stack dev + maintenance across the stack, features for students/teachers/admins, AI-based adaptive-learning features, performance/security/quality work. Ownership breakdown at the feature level — Unknown, ask Ones per-feature.
+- **ProPlastik** — production web/SEO/DNS migration case study, full detail: projects/proplastik/context.md. **Confirmed 2026-08-23: part of her MK Talent role** (not freelance/side work), even though it doesn't appear on the one-page CV — safe to present as MK Talent professional experience going forward.
 - **PrimeProfs mobile app (React Native)** — Confirmed 2026-08-23: she built it **from scratch**, currently in testing/deployment phase. Not yet on the CV or portfolio; add as a MK Talent bullet ("conception et développement de A à Z... en phase de tests et déploiement"), not as a shipped/live feature.
 
 ## Projects confirmed on the CV (`mes-docs/cv.md`) — most detailed, most current source for these three
@@ -22,7 +22,7 @@
 - **MazeBank** (2022–2023) — multi-client banking app. JavaFX, Symfony, CodenameOne, MySQL.
 
 ## Discipline
-For every project, when asked to write it up (CV bullet, case study, recruiter pitch): distinguish role/ownership, do not invent metrics, use the CV framing over the portfolio framing when they conflict on substance (not just naming), and use the case-study structure in CLAUDE.md §12 for anything beyond a one-line summary.
+For every project, when asked to write it up (CV bullet, case study, recruiter pitch): distinguish role/ownership, do not invent metrics, use the CV framing over the portfolio framing when they conflict on substance (not just naming), and use the case-study structure in CLAUDE.md "Career tasks" for anything beyond a one-line summary.
 
 ## Open items (Unknown)
 - Confirm Microservice Project = Campus Living Spaces (same project, two names)
