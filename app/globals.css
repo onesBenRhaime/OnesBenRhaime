@@ -395,7 +395,8 @@ p {
    relative to the photo width (--photo). Mobile (<=900px) switches to a grid. */
 
 .hero {
-  --photo: clamp(340px, 36vw, 520px);
+  --photo: clamp(290px, 29vw, 420px);
+  --photo-h: calc(var(--photo) * 1.304);
   --word: clamp(72px, 9.6vw, 150px);
   position: relative;
   display: flex;
@@ -418,25 +419,25 @@ p {
 }
 
 .hero-word--hey {
-  right: calc(50% + var(--photo) * 0.36);
-  top: calc(var(--photo) * 0.34);
+  right: calc(50% + var(--photo) * 0.52);
+  top: calc(var(--photo-h) * 0.2);
 }
 
 .hero-word--im {
-  right: calc(50% + var(--photo) * 0.4);
-  top: calc(var(--photo) * 0.74);
+  right: calc(50% + var(--photo) * 0.5);
+  top: calc(var(--photo-h) * 0.6);
 }
 
 .hero-word--ones {
-  left: calc(50% + var(--photo) * 0.3);
-  top: calc(var(--photo) * 0.86);
+  left: calc(50% + var(--photo) * 0.36);
+  top: calc(var(--photo-h) * 0.68);
 }
 
 .hero-todo {
   position: absolute;
   z-index: 2;
-  left: calc(50% + var(--photo) * 0.46);
-  top: calc(var(--photo) * 0.44);
+  left: calc(50% + var(--photo) * 0.62);
+  top: calc(var(--photo-h) * 0.18);
   margin: 0;
   font-family: var(--font-mono);
   font-size: clamp(20px, 2.2vw, 32px);
@@ -452,8 +453,8 @@ p {
 .hero-tag {
   position: absolute;
   z-index: 2;
-  left: calc(50% + var(--photo) * 0.52);
-  top: calc(var(--photo) * 0.86 - 72px);
+  left: calc(50% + var(--photo) * 0.62);
+  top: calc(var(--photo-h) * 0.68 - 72px);
   margin: 0;
   max-width: 26ch;
 }
@@ -1209,7 +1210,7 @@ a.repo-card:hover h3 {
 
   .hero-photo {
     grid-area: photo;
-    width: min(100%, 420px);
+    width: min(78%, 320px);
     justify-self: center;
     margin-top: 12px;
   }

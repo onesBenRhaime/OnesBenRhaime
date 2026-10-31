@@ -216,9 +216,9 @@ export default function Home() {
             </svg>
             <Image
               src="/assets/ones-hero.png"
-              alt="Ones smiling in glasses and a patterned scarf"
+              alt="Ones taking a mirror selfie in a striped tee, smiling"
               width={860}
-              height={798}
+              height={1121}
               priority
             />
           </div>
