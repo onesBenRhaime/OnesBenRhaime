@@ -3,6 +3,7 @@ export type Project = {
   title: string;
   label: string;
   description: string;
+  caption: string;
   tags: string[];
   liveUrl?: string;
   githubUrl?: string;
@@ -12,6 +13,7 @@ export type Project = {
 export const districtProjects: Project[] = [
   {
     slug: "orange-test",
+    caption: "auto-graded tests, so recruiters could stop grading by hand.",
     title: "Orange Test",
     label: "Built at Orange Digital Center",
     description:
@@ -27,6 +29,7 @@ export const districtProjects: Project[] = [
   },
   {
     slug: "ecommerce",
+    caption: "a shop that loads before you change your mind.",
     title: "E-Commerce Platform",
     label: "Full-Stack Shop",
     description:
@@ -42,6 +45,7 @@ export const districtProjects: Project[] = [
   },
   {
     slug: "smartovate",
+    caption: "time tracking that tracks itself.",
     title: "Smartovate",
     label: "AI Time-Tracking & Project Automation",
     description:
@@ -55,6 +59,7 @@ export const districtProjects: Project[] = [
   },
   {
     slug: "esprit-network",
+    caption: "hiring, minus the spreadsheet chaos.",
     title: "Esprit Network",
     label: "Recruitment & Talent Assessment",
     description:
@@ -69,6 +74,7 @@ export const districtProjects: Project[] = [
   },
   {
     slug: "campus-living",
+    caption: "every dorm room, accounted for.",
     title: "Campus Living Spaces",
     label: "Housing Management · Angular + Spring",
     description:
@@ -85,6 +91,7 @@ export const districtProjects: Project[] = [
   },
   {
     slug: "paysan",
+    caption: "invoices for a cheese maker. yes, really.",
     title: "Le Paysan",
     label: "Billing Automation · Paysan du Cap Bon",
     description:

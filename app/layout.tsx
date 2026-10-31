@@ -1,18 +1,10 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Caveat } from "next/font/google";
 import "./globals.css";
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap"
-});
-
-const caveat = Caveat({
-  subsets: ["latin"],
-  variable: "--font-handwriting",
-  display: "swap"
-});
+// Anton (display), Geist (body), Geist Mono (labels), Caveat (hand-written wall).
+// Loaded via <link> because Geist is newer than the font list bundled with next@14.
+const FONTS_URL =
+  "https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;700&family=Geist:wght@400;500;700&family=Geist+Mono:wght@400;500&display=swap";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
@@ -104,17 +96,20 @@ const personJsonLd = {
   ]
 };
 
-const themeInitScript = `(function(){try{var t=localStorage.getItem('ones-theme');if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`;
-
 export default function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${jetbrainsMono.variable} ${caveat.variable}`}>
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="stylesheet" href={FONTS_URL} />
+        <meta name="theme-color" content="#F3F3E9" />
+      </head>
       <body>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}

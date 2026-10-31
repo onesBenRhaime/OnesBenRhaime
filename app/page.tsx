@@ -1,84 +1,31 @@
 import Image from "next/image";
-import {
-  ArrowRight,
-  Boxes,
-  BrainCircuit,
-  BriefcaseBusiness,
-  Code2,
-  Database,
-  Download,
-  Gauge,
-  GitBranch,
-  Github,
-  GraduationCap,
-  HeartPulse,
-  Landmark,
-  Layers3,
-  Linkedin,
-  Mail,
-  Rocket,
-  Sparkles,
-  Trophy,
-  Zap
-} from "lucide-react";
-import BootSequence from "./components/BootSequence";
+import BlurList from "./components/BlurList";
 import GitHubShowcase from "./components/GitHubShowcase";
-import MetroTimeline from "./components/MetroTimeline";
 import ProjectShowcase from "./components/ProjectShowcase";
 import RevealSection from "./components/RevealSection";
 import ScrollProgress from "./components/ScrollProgress";
 import SiteNav from "./components/SiteNav";
-import WorldMap from "./components/WorldMap";
+import SwapLabel from "./components/SwapLabel";
+import Ticker from "./components/Ticker";
 import { districtProjects } from "./projects";
 
 const featuredProject = {
   title: "PrimeProfs",
-  label: "EdTech Platform",
+  label: "EdTech platform · 2024 – now",
+  caption: "the one i'm building right now.",
   description:
-    "A learning platform shaped around product thinking, scalable architecture and AI-assisted education.",
+    "a learning platform shaped around product thinking, scalable architecture and ai-assisted education. students use it to learn faster; i use it to prove that edtech doesn't have to feel like homework.",
   tags: ["React", "Next.js", "NestJS", "PostgreSQL", "AI Integration"]
 };
 
 const timelineStations = [
   {
-    year: "Jun – Jul 2021",
-    title: "Web Developer · Internship",
-    subtitle: "Cloud Master Tunisie",
-    location: "Tunis, Tunisia",
+    year: "2024 – now",
+    title: "Full-Stack Product Engineer",
+    subtitle: "PrimeProfs",
+    location: "EdTech · Product Engineering",
     detail:
-      "Built an educational platform for learning programming through interactive exercises."
-  },
-  {
-    year: "Aug – Sep 2021",
-    title: "Software Testing · Internship",
-    subtitle: "BIAT — Banque Internationale Arabe de Tunisie",
-    location: "Tunisia · Java, Katalon Studio",
-    detail:
-      "Designed and automated functional test scenarios to validate web applications and improve software quality."
-  },
-  {
-    year: "Feb – Jun 2022",
-    title: "Full-Stack JS Engineer · End-of-studies internship",
-    subtitle: "Orange Digital Center",
-    location: "Tunis, Tunisia · On-site",
-    detail:
-      "Built a recruitment-automation and candidate-assessment platform — pre-selection, online testing and evaluation to streamline hiring for recruiters and candidates."
-  },
-  {
-    year: "Jul – Aug 2023",
-    title: "Web Developer · Internship",
-    subtitle: "Paysan du Cap Bon",
-    location: "Tunis, Tunisia · On-site",
-    detail:
-      "Developed a billing-system automation application with Symfony 5 and MySQL."
-  },
-  {
-    year: "Jun – Jul 2024",
-    title: "Full-Stack Developer · Internship",
-    subtitle: "Smartovate",
-    location: "London, UK · Remote",
-    detail:
-      "Contributed to Smartovate's AI-driven productivity product for startups and teams."
+      "building primeprofs, an ai-assisted edtech platform students use to learn more effectively."
   },
   {
     year: "2024",
@@ -86,57 +33,54 @@ const timelineStations = [
     subtitle: "Caustaza Group LTD"
   },
   {
-    year: "2024 – Present",
-    title: "Full-Stack Product Engineer",
-    subtitle: "PrimeProfs",
-    location: "EdTech · Product Engineering",
+    year: "Jun – Jul 2024",
+    title: "Full-Stack Developer · Internship",
+    subtitle: "Smartovate",
+    location: "London, UK · Remote",
     detail:
-      "Building PrimeProfs, an AI-assisted EdTech platform students use to learn more effectively."
+      "contributed to smartovate's ai-driven productivity product for startups and teams."
+  },
+  {
+    year: "Jul – Aug 2023",
+    title: "Web Developer · Internship",
+    subtitle: "Paysan du Cap Bon",
+    location: "Tunis · On-site",
+    detail: "automated a billing system with symfony 5 and mysql."
+  },
+  {
+    year: "Feb – Jun 2022",
+    title: "Full-Stack JS Engineer · End-of-studies",
+    subtitle: "Orange Digital Center",
+    location: "Tunis · On-site",
+    detail:
+      "built a recruitment-automation and candidate-assessment platform: pre-selection, online testing and evaluation."
+  },
+  {
+    year: "Aug – Sep 2021",
+    title: "Software Testing · Internship",
+    subtitle: "BIAT",
+    location: "Tunisia · Java, Katalon Studio",
+    detail:
+      "designed and automated functional test scenarios to validate web applications."
+  },
+  {
+    year: "Jun – Jul 2021",
+    title: "Web Developer · Internship",
+    subtitle: "Cloud Master Tunisie",
+    location: "Tunis",
+    detail:
+      "built an educational platform for learning programming through interactive exercises."
   }
 ];
 
-const skillGroups = [
-  {
-    title: "Frontend",
-    icon: Code2,
-    items: ["React", "Next.js", "TypeScript"]
-  },
-  {
-    title: "Backend",
-    icon: Layers3,
-    items: ["NestJS", "Node.js", "Python"]
-  },
-  {
-    title: "Databases",
-    icon: Database,
-    items: ["PostgreSQL", "MongoDB", "MySQL"]
-  },
-  {
-    title: "Product Engineering",
-    icon: Rocket,
-    items: ["System Design", "Performance", "Architecture", "AI Integration"]
-  }
-];
-
-const services = [
-  {
-    icon: Rocket,
-    title: "Product Engineering",
-    description:
-      "From idea to shipped product — full-stack builds with React, Next.js and NestJS, shaped around real user problems."
-  },
-  {
-    icon: BrainCircuit,
-    title: "AI Integration",
-    description:
-      "Bringing AI into products in a useful way — assisted learning, smart workflows and features people actually reach for."
-  },
-  {
-    icon: Gauge,
-    title: "Performance & Architecture",
-    description:
-      "Scalable system design and fast, reliable web apps that stay maintainable as the product and team grow."
-  }
+const capabilities = [
+  "Product engineering",
+  "Full-stack builds",
+  "AI integration",
+  "EdTech platforms",
+  "System design",
+  "Performance",
+  "Test automation"
 ];
 
 const techStack = [
@@ -155,360 +99,346 @@ const techStack = [
 
 const labProjects = [
   {
-    icon: Boxes,
     year: "2023 – 2024",
     title: "Microservice Architecture",
     description:
-      "A dynamic, high-performance microservices system for university room-reservation, spanning Spring Boot, Node.js and Angular, with H2 and MySQL to fit each service's needs.",
+      "a university room-reservation system split into services: spring boot, node.js and angular, with h2 and mysql picked per service.",
     tags: ["Spring Boot", "Node.js", "Angular", "Microservices"],
     repos: [
       {
-        label: "Distributed app",
+        label: "distributed app",
         url: "https://github.com/onesBenRhaime/Application-Web-Distribues-MicroService-Spring"
       },
       {
-        label: "Purchase service",
+        label: "purchase service",
         url: "https://github.com/onesBenRhaime/4TWIN1-G1-Backend-Achat/tree/onesBenRhaime-4TWIN1-G1"
       }
     ]
   },
   {
-    icon: GitBranch,
     year: "2023 – 2024",
     title: "CI/CD DevOps Pipeline",
     description:
-      "A continuous integration and deployment pipeline with Jenkins and Docker, plus monitoring through Prometheus & Grafana and automated email alerting.",
+      "jenkins + docker pipeline with prometheus and grafana watching it, and email alerts when something breaks.",
     tags: ["Jenkins", "Docker", "Prometheus", "Grafana"],
     repos: []
   },
   {
-    icon: Landmark,
     year: "2022 – 2023",
     title: "MazeBank",
     description:
-      "An integrated multi-client banking application — JavaFX, Symfony and CodenameOne clients over a shared MySQL database — handling banking services and account features.",
+      "one bank, three clients: javafx, symfony and codenameone sharing a single mysql database.",
     tags: ["Symfony", "JavaFX", "CodenameOne", "MySQL"],
     repos: [
       {
-        label: "Repository",
+        label: "repository",
         url: "https://github.com/onesBenRhaime/MazeBank--Scared-To-Compile"
       }
     ]
   }
 ];
 
-const impactItems = [
+const achievements = [
+  { label: "2nd place", detail: "ATS problem solving hackathon 2025" },
+  { label: "3rd place", detail: "ATS problem solving hackathon 2024" },
+  { label: "with honors", detail: "computer engineering degree" }
+];
+
+const faqs = [
   {
-    icon: BrainCircuit,
-    title: "AI-powered learning experiences"
+    q: "Frontend or backend?",
+    a: "yes. react on the front, nestjs in the middle, postgres underneath."
   },
   {
-    icon: GraduationCap,
-    title: "Educational platforms"
+    q: "Can you actually ship?",
+    a: "primeprofs is live and students open it every day."
   },
   {
-    icon: Zap,
-    title: "High-performance web applications"
+    q: "What's your weak spot?",
+    a: "i over-test things. blame the bank internship."
   },
   {
-    icon: Rocket,
-    title: "Product-focused solutions"
+    q: "When am I the wrong pick?",
+    a: "when you need someone to close tickets without asking why they exist."
   },
   {
-    icon: Code2,
-    title: "Developer-friendly systems"
+    q: "Remote?",
+    a: "done it for a london startup from tunis. time zones are a calendar problem."
+  },
+  {
+    q: "What languages?",
+    a: "arabic, french, english. and typescript, fluently."
+  },
+  {
+    q: "What are you looking for next?",
+    a: "a product team that cares about users more than story points."
   }
 ];
 
+const contactLinks = [
+  { label: "email me", href: "mailto:ones.benrhaime@gmail.com" },
+  { label: "linkedin", href: "https://www.linkedin.com/in/ones-ben-rhaime/", external: true },
+  { label: "github", href: "https://github.com/onesbenrhaime", external: true },
+  { label: "download cv", href: "/assets/ones-cv.pdf", download: true }
+];
+
+const WALL_LINE = "let's ship something people actually use. ";
+
 export default function Home() {
   return (
-    <main>
+    <>
+      <Ticker />
       <ScrollProgress />
-      <BootSequence />
-      <WorldMap />
-
       <SiteNav />
 
-      <section className="hero" id="top">
-        <div className="hero-copy">
-          <span className="zone-label zone-label--entry">📍 Ones Land — Entry Point</span>
-          <span className="eyebrow">Product Engineering / EdTech / AI</span>
-          <h1>Ones</h1>
-          <p className="hero-title">
-            Software Engineer / Product Builder / Problem Solver
-          </p>
-          <p className="hero-text">
-            Building AI-powered educational products and scalable web
-            applications.
-          </p>
-          <div className="hero-actions">
-            <a className="button primary" href="#work">
-              View My Work <ArrowRight aria-hidden="true" />
-            </a>
-            <a className="button secondary" href="#contact">
-              Let&apos;s Connect
-            </a>
+      <main>
+        <section className="hero wrap" id="top">
+          <div className="hero-copy">
+            <span className="eyebrow">software engineer · product builder · tunis</span>
+            <h1>
+              Hey I&apos;m
+              <br />
+              Ones
+            </h1>
+            <p className="hero-todo" aria-label="To do: hire Ones">
+              <span>{"// TODO:"}</span> hire ones
+            </p>
+            <p className="lede">
+              i build edtech and ai products end to end. the interface, the
+              api, the boring infra in between. currently shipping primeprofs.
+            </p>
+            <div className="hero-actions">
+              <a className="bracket bracket--solid" href="#work">
+                <SwapLabel>see the work</SwapLabel>
+              </a>
+              <a className="bracket" href="/assets/ones-cv.pdf" download>
+                <SwapLabel>grab my cv</SwapLabel>
+              </a>
+            </div>
           </div>
-        </div>
 
-        <div className="hero-visual" aria-label="Ones brand illustration">
-          <Image
-            src="/assets/ones-land/ones-3.png"
-            alt="Black and white personal brand banner for Ones"
-            width={1584}
-            height={396}
-            priority
-          />
-        </div>
-      </section>
-
-      <RevealSection className="section about-section" id="about">
-        <div className="section-heading">
-          <span className="zone-label zone-label--coffee">☕ Coffee Shop</span>
-          <h2>More than a developer</h2>
-        </div>
-        <div className="about-grid">
-          <div className="portrait-wrap">
+          <figure className="hero-portrait">
             <Image
               src="/assets/ones-sketch.png"
-              alt="Black and white sketch portrait of Ones"
+              alt="Pencil sketch portrait of Ones, smiling"
               width={1240}
               height={1240}
+              priority
             />
-          </div>
-          <div className="about-copy">
-            <p>
-              I&apos;m Ones, a Software Engineer passionate about building
-              products that solve real-world problems.
-            </p>
-            <p>
-              My journey combines full-stack development, product thinking, AI
-              integration and educational technology.
-            </p>
-            <p>
-              Today, I help build PrimeProfs, an EdTech platform used by
-              students to learn more effectively through technology.
-            </p>
-          </div>
-        </div>
-      </RevealSection>
+            <svg className="hero-scribble" viewBox="0 0 200 200" aria-hidden="true">
+              <path d="M60 22 C 140 8, 192 70, 178 124 S 90 196, 40 160 S 4 70, 48 34 L 70 18" />
+            </svg>
+            <figcaption>that&apos;s me. usually less pencil.</figcaption>
+          </figure>
+        </section>
 
-      <RevealSection className="section impact-section" id="ailab">
-        <div className="section-heading">
-          <span className="zone-label zone-label--ailab">🚀 AI Lab</span>
-          <h2>What I build</h2>
+        <div className="marquee-wrap">
+        <div className="marquee" aria-label="Tech stack">
+          <div className="marquee-track">
+            {[...techStack, ...techStack].map((tech, index) => (
+              <span className="marquee-item" key={`${tech}-${index}`}>
+                {tech}
+                <b aria-hidden="true">♥</b>
+              </span>
+            ))}
+          </div>
         </div>
-        <div className="impact-grid">
-          {impactItems.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div className="impact-card" key={item.title}>
-                <Icon aria-hidden="true" />
-                <span>{item.title}</span>
+        </div>
+
+        <RevealSection className="section wrap about" id="about">
+          <div className="section-heading">
+            <span className="eyebrow">01 / about</span>
+            <h2>More than a developer</h2>
+          </div>
+          <div className="about-grid">
+            <div className="about-copy">
+              <p className="big-line">i don&apos;t write code for code&apos;s sake.</p>
+              <p>
+                i&apos;m ones, a software engineer who likes problems more than
+                frameworks. my work sits where full-stack development, product
+                thinking, ai and education meet.
+              </p>
+              <p>
+                today i help build primeprofs, a platform students use to learn
+                more effectively. before that: banks, startups, a recruitment
+                platform and one cheese maker.
+              </p>
+            </div>
+            <div>
+              <span className="mono muted">things i&apos;m good at ↓</span>
+              <BlurList items={capabilities} />
+            </div>
+          </div>
+        </RevealSection>
+
+        <RevealSection className="section wrap" id="work">
+          <div className="section-heading">
+            <span className="eyebrow">02 / work</span>
+            <h2>Stuff I shipped</h2>
+            <p className="section-lead">
+              one line each. click a card for the screenshots and the long
+              version.
+            </p>
+          </div>
+
+          <article className="flagship">
+            <div className="flagship-copy">
+              <span className="mono">{featuredProject.label}</span>
+              <h3>{featuredProject.title}</h3>
+              <p className="flagship-caption">{featuredProject.caption}</p>
+              <p>{featuredProject.description}</p>
+              <ul className="tag-row tag-row--light" aria-label="Stack">
+                {featuredProject.tags.map((tag) => (
+                  <li key={tag}>{tag}</li>
+                ))}
+              </ul>
+            </div>
+            <span className="flagship-stamp" aria-hidden="true">
+              now
+              <br />
+              building
+            </span>
+          </article>
+
+          <ProjectShowcase projects={districtProjects} />
+        </RevealSection>
+
+        <RevealSection className="section wrap" id="lab">
+          <div className="section-heading">
+            <span className="eyebrow">03 / lab</span>
+            <h2>Systems &amp; side quests</h2>
+            <p className="section-lead">
+              deeper engineering: microservices, devops and multi-client apps.
+            </p>
+          </div>
+          <ol className="rows">
+            {labProjects.map((project, index) => (
+              <li className="row" key={project.title}>
+                <span className="row-index">{String(index + 1).padStart(2, "0")}</span>
+                <div className="row-main">
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <ul className="tag-row" aria-label="Stack">
+                    {project.tags.map((tag) => (
+                      <li key={tag}>{tag}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="row-side">
+                  <span className="mono muted">{project.year}</span>
+                  {project.repos.map((repo) => (
+                    <a
+                      key={repo.url}
+                      className="bracket"
+                      href={repo.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <SwapLabel>{repo.label}</SwapLabel>
+                    </a>
+                  ))}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </RevealSection>
+
+        <RevealSection className="section wrap" id="experience">
+          <div className="section-heading">
+            <span className="eyebrow">04 / log</span>
+            <h2>Where I&apos;ve been</h2>
+          </div>
+          <ol className="rows">
+            {timelineStations.map((station, index) => (
+              <li className="row" key={`${station.subtitle}-${station.year}`}>
+                <span className="row-index">
+                  {String(timelineStations.length - index).padStart(2, "0")}
+                </span>
+                <div className="row-main">
+                  <h3>{station.subtitle}</h3>
+                  <p className="row-role">{station.title}</p>
+                  {station.detail && <p>{station.detail}</p>}
+                </div>
+                <div className="row-side">
+                  <span className="mono">{station.year}</span>
+                  {station.location && (
+                    <span className="mono muted">{station.location}</span>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          <div className="stamps" aria-label="Achievements">
+            {achievements.map((item) => (
+              <div className="stamp" key={item.detail}>
+                <strong>{item.label}</strong>
+                <span>{item.detail}</span>
               </div>
-            );
-          })}
-        </div>
-      </RevealSection>
+            ))}
+          </div>
+        </RevealSection>
 
-      <RevealSection className="section castle-section" id="work">
-        <div className="section-heading">
-          <span className="zone-label zone-label--castle">🏰 Product Castle</span>
-          <h2>The flagship product</h2>
-        </div>
-        <div className="castle-grid">
-          <article className="project-card featured castle-card">
-            <span>{featuredProject.label}</span>
-            <h3>{featuredProject.title}</h3>
-            <p>{featuredProject.description}</p>
-            <div className="tag-row">
-              {featuredProject.tags.map((tag) => (
-                <span key={tag}>{tag}</span>
+        <GitHubShowcase />
+
+        <RevealSection className="section wrap" id="faq">
+          <div className="section-heading">
+            <span className="eyebrow">06 / faq</span>
+            <h2>Questions you were going to ask</h2>
+          </div>
+          <ol className="faq">
+            {faqs.map((item, index) => (
+              <li key={item.q}>
+                <span className="faq-n">{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{item.q}</h3>
+                  <p>{item.a}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </RevealSection>
+
+        <RevealSection className="closing" id="contact">
+          <div className="wall" aria-hidden="true">
+            {WALL_LINE.repeat(90)}
+          </div>
+          <div className="closing-inner wrap">
+            <h2 className="marker">
+              Let&apos;s
+              <br />
+              ship it
+            </h2>
+            <p className="lede">
+              got a product, a team, or a problem that won&apos;t sit still?
+              i reply to every message.
+            </p>
+            <div className="contact-row">
+              {contactLinks.map((link) => (
+                <a
+                  key={link.label}
+                  className="bracket bracket--solid"
+                  href={link.href}
+                  {...(link.external ? { target: "_blank", rel: "noreferrer" } : {})}
+                  {...(link.download ? { download: true } : {})}
+                >
+                  <SwapLabel>{link.label}</SwapLabel>
+                </a>
               ))}
             </div>
-          </article>
-        </div>
-      </RevealSection>
-
-      <RevealSection className="section projects-section" id="district">
-        <div className="section-heading">
-          <span className="zone-label zone-label--react">⚛️ React District</span>
-          <h2>Product-shaped engineering</h2>
-          <p className="section-lead">
-            A selection of platforms I&apos;ve built end to end — click any
-            preview to explore the screenshots.
-          </p>
-        </div>
-        <ProjectShowcase projects={districtProjects} />
-      </RevealSection>
-
-      <RevealSection className="section lab-section" id="lab">
-        <div className="section-heading">
-          <span className="zone-label zone-label--ailab">🧪 Engineering Lab</span>
-          <h2>Systems &amp; academic builds</h2>
-          <p className="section-lead">
-            Deeper engineering work — microservices, DevOps and multi-client
-            apps — with the source on GitHub.
-          </p>
-        </div>
-        <div className="lab-grid">
-          {labProjects.map((project) => {
-            const Icon = project.icon;
-            return (
-              <article className="lab-card" key={project.title}>
-                <div className="lab-head">
-                  <span className="lab-icon">
-                    <Icon aria-hidden="true" />
-                  </span>
-                  <span className="lab-year">{project.year}</span>
-                </div>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <div className="tag-row">
-                  {project.tags.map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
-                </div>
-                {project.repos.length > 0 && (
-                  <div className="lab-repos">
-                    {project.repos.map((repo) => (
-                      <a
-                        key={repo.url}
-                        className="lab-repo"
-                        href={repo.url}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <Github aria-hidden="true" />
-                        {repo.label}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </article>
-            );
-          })}
-        </div>
-      </RevealSection>
-
-      <RevealSection className="section services-section" id="services">
-        <div className="section-heading">
-          <span className="zone-label zone-label--ailab">🛠️ Workshop</span>
-          <h2>How I can help</h2>
-        </div>
-        <div className="services-grid">
-          {services.map((service) => {
-            const Icon = service.icon;
-            return (
-              <article className="service-card " key={service.title}>
-                <span className="service-icon">
-                  <Icon aria-hidden="true" />
-                </span>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-              </article>
-            );
-          })}
-        </div>
-      </RevealSection>
-
-      <div className="marquee" aria-label="Tech stack">
-        <div className="marquee-track">
-          {[...techStack, ...techStack].map((tech, index) => (
-            <span className="marquee-item" key={`${tech}-${index}`}>
-              {tech}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <RevealSection className="section timeline-section" id="experience">
-        <div className="section-heading">
-          <span className="zone-label zone-label--metro">🚉 Metro Line</span>
-          <h2>Timeline</h2>
-        </div>
-        <MetroTimeline stations={timelineStations} />
-      </RevealSection>
-
-      <RevealSection className="section academy-section" id="academy">
-        <div className="section-heading">
-          <span className="zone-label zone-label--academy">🎓 Academy</span>
-          <h2>Built across the stack</h2>
-        </div>
-        <div className="skills-grid">
-          {skillGroups.map((group) => {
-            const Icon = group.icon;
-            return (
-              <article className="skill-card" key={group.title}>
-                <Icon aria-hidden="true" />
-                <h3>{group.title}</h3>
-                <div className="skill-list">
-                  {group.items.map((item) => (
-                    <span key={item}>{item}</span>
-                  ))}
-                </div>
-              </article>
-            );
-          })}
-        </div>
-
-        <h3 className="academy-subheading">Proof of momentum</h3>
-        <div className="achievement-grid">
-          <div className="achievement-card">
-            <Trophy aria-hidden="true" />
-            <span>2nd Place ATS Problem Solving Hackathon 2025</span>
           </div>
-          <div className="achievement-card">
-            <Trophy aria-hidden="true" />
-            <span>3rd Place ATS Problem Solving Hackathon 2024</span>
-          </div>
-          <div className="achievement-card">
-            <GraduationCap aria-hidden="true" />
-            <span>Computer Engineering Degree - With Honors</span>
-          </div>
-        </div>
-      </RevealSection>
+        </RevealSection>
+      </main>
 
-      <GitHubShowcase />
-
-      <RevealSection className="philosophy-section">
-        <Sparkles aria-hidden="true" />
-        <p>
-          I don&apos;t just write code. I build products, solve problems and
-          create learning experiences that help people grow.
-        </p>
-      </RevealSection>
-
-      <RevealSection className="section contact-section" id="contact">
-        <div className="section-heading">
-          <span className="zone-label zone-label--signal">📡 Signal</span>
-          <h2>Let&apos;s build what matters</h2>
-        </div>
-        <div className="contact-grid">
-          <a href="https://www.linkedin.com/in/ones-ben-rhaime/" target="_blank" rel="noreferrer">
-            <Linkedin aria-hidden="true" />
-            LinkedIn
-          </a>
-          <a href="https://github.com/onesbenrhaime" target="_blank" rel="noreferrer">
-            <Github aria-hidden="true" />
-            GitHub
-          </a>
-          <a href="mailto:ones.benrhaime@gmail.com">
-            <Mail aria-hidden="true" />
-            Email
-          </a>
-          <a href="/assets/ones-cv.pdf" download>
-            <Download aria-hidden="true" />
-            CV Download
-          </a>
-        </div>
-      </RevealSection>
-
-      <footer>
-        <BriefcaseBusiness aria-hidden="true" />
-        <span>Ones Ben Rhaime / Software Engineer</span>
-        <HeartPulse aria-hidden="true" />
+      <footer className="footer wrap">
+        <span>ones ben rhaime ♥ software engineer</span>
+        <span>made in tunis · {new Date().getFullYear()}</span>
       </footer>
-    </main>
+
+      <a className="float-cta" href="#contact" aria-label="Contact Ones">
+        <span aria-hidden="true">&gt;_</span>
+        say hi
+      </a>
+    </>
   );
 }

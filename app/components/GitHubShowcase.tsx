@@ -3,6 +3,7 @@
 import { GitFork, Github, Star } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
+import SwapLabel from "./SwapLabel";
 
 type GitHubUser = {
   public_repos: number;
@@ -80,10 +81,13 @@ export default function GitHubShowcase() {
   }, [user]);
 
   return (
-    <section className="section github-section" id="github">
+    <section className="section wrap github-section" id="github">
       <div className="section-heading">
-        <span className="zone-label zone-label--github">💻 GitHub Outpost</span>
-        <h2>Open source signal</h2>
+        <span className="eyebrow">05 / receipts</span>
+        <h2>Commits don&apos;t lie</h2>
+        <p className="section-lead">
+          talk is cheap. here&apos;s what i pushed recently, pulled live from github.
+        </p>
       </div>
 
       <div className="github-layout">
@@ -98,7 +102,7 @@ export default function GitHubShowcase() {
 
           <Image
             className="contribution-graph"
-            src={`https://ghchart.rshah.org/111111/${username}`}
+            src={`https://ghchart.rshah.org/E33529/${username}`}
             alt={`${username} GitHub contribution graph`}
             width={640}
             height={140}
@@ -106,17 +110,17 @@ export default function GitHubShowcase() {
           />
 
           <a
-            className="text-link"
+            className="bracket"
             href={user?.html_url || `https://github.com/${username}`}
             target="_blank"
             rel="noreferrer"
           >
-            View full GitHub profile
+            <SwapLabel>see full profile</SwapLabel>
           </a>
         </div>
 
         <div className="repo-list" aria-live="polite">
-          {status === "loading" && <p className="muted">Loading latest work...</p>}
+          {status === "loading" && <p className="muted mono">fetching commits…</p>}
           {status === "fallback" && (
             <>
               <FallbackRepo
@@ -147,7 +151,7 @@ export default function GitHubShowcase() {
               >
                 <div>
                   <h3>{repo.name}</h3>
-                  <p>{repo.description || "Recently updated project by Ones."}</p>
+                  <p>{repo.description || "no description. the code speaks for itself."}</p>
                 </div>
                 <div className="repo-meta">
                   {repo.language && <span>{repo.language}</span>}
