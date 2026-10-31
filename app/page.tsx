@@ -193,43 +193,44 @@ export default function Home() {
 
       <main>
         <section className="hero wrap" id="top">
-          <div className="hero-copy">
-            <span className="eyebrow">software engineer · product builder · tunis</span>
-            <h1>
-              Hey I&apos;m
-              <br />
-              Ones
-            </h1>
-            <p className="hero-todo" aria-label="To do: hire Ones">
-              <span>{"// TODO:"}</span> hire ones
-            </p>
-            <p className="lede">
-              i build edtech and ai products end to end. the interface, the
-              api, the boring infra in between. currently shipping primeprofs.
-            </p>
-            <div className="hero-actions">
-              <a className="bracket bracket--solid" href="#work">
-                <SwapLabel>see the work</SwapLabel>
-              </a>
-              <a className="bracket" href="/assets/ones-cv.pdf" download>
-                <SwapLabel>grab my cv</SwapLabel>
-              </a>
-            </div>
-          </div>
+          <h1 className="hero-title">
+            <span className="hero-word hero-word--hey">Hey</span>
+            <span className="hero-word hero-word--im">I&apos;m</span>
+            <span className="hero-word hero-word--ones">Ones</span>
+          </h1>
 
-          <figure className="hero-portrait">
+          <p className="hero-todo">
+            <span>{"// TODO:"}</span> hire ones
+          </p>
+
+          <p className="hero-tag mono">a software engineer who ships, with a sense of humour.</p>
+
+          <div className="hero-photo">
+            <svg className="hero-squiggles" viewBox="0 0 400 420" aria-hidden="true">
+              <path pathLength={1} d="M58 400 C 20 330, 70 290, 40 230 S 60 140, 30 80 S 50 30, 40 10" />
+              <path pathLength={1} d="M92 410 C 70 350, 110 300, 80 250 S 96 170, 72 120" />
+              <path pathLength={1} d="M330 410 C 360 340, 318 300, 350 240 S 330 150, 362 90 S 344 40, 356 18" />
+              <path pathLength={1} d="M300 400 C 318 352, 290 310, 312 262 S 300 200, 320 160" />
+              <path pathLength={1} className="spark" d="M318 70 l 8 -22 l 8 22 l 22 8 l -22 8 l -8 22 l -8 -22 l -22 -8 z" />
+              <path pathLength={1} className="spark" d="M70 168 l 5 -14 l 5 14 l 14 5 l -14 5 l -5 14 l -5 -14 l -14 -5 z" />
+            </svg>
             <Image
-              src="/assets/ones-sketch.png"
-              alt="Pencil sketch portrait of Ones, smiling"
-              width={1240}
-              height={1240}
+              src="/assets/ones-hero.png"
+              alt="Ones taking a mirror selfie in a striped tee, smiling"
+              width={860}
+              height={1121}
               priority
             />
-            <svg className="hero-scribble" viewBox="0 0 200 200" aria-hidden="true">
-              <path d="M60 22 C 140 8, 192 70, 178 124 S 90 196, 40 160 S 4 70, 48 34 L 70 18" />
-            </svg>
-            <figcaption>that&apos;s me. usually less pencil.</figcaption>
-          </figure>
+          </div>
+
+          <div className="hero-actions">
+            <a className="bracket bracket--solid" href="#work">
+              <SwapLabel>see the work</SwapLabel>
+            </a>
+            <a className="bracket" href="/assets/ones-cv.pdf" download>
+              <SwapLabel>grab my cv</SwapLabel>
+            </a>
+          </div>
         </section>
 
         <div className="marquee-wrap">
