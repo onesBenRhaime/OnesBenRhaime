@@ -274,6 +274,11 @@ p {
   color: var(--paper);
   padding: 12px 16px;
 }
+.bracket--solid2 {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 12px 16px;
+}
 
 .bracket--solid:hover {
   transform: rotate(-2deg) scale(1.04);
@@ -391,18 +396,40 @@ p {
 }
 
 /* ---------- hero: cut-out photo with the greeting wrapped around it ----------
-   Desktop: the photo is the only in-flow element; words are pinned around it
-   relative to the photo width (--photo). Mobile (<=900px) switches to a grid. */
+   Desktop: three-column grid (words | photo | words). The big words tuck
+   slightly under/over the photo edges via negative margins, so the layout
+   scales with the viewport instead of drifting. Mobile (<=900px) restacks. */
 
 .hero {
-  --photo: clamp(490px, 29vw, 420px);
-  --photo-h: calc(var(--photo) * 1.504);
-  --word: clamp(92px, 9.6vw, 150px);
+  --photo: clamp(300px, 30vw, 440px);
+  --word: clamp(84px, 9vw, 160px);
+  --tuck: calc(var(--word) * 0.18);
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-block: clamp(46px, 7vw, 46px)clamp(46px, 7vw, 58px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--photo) minmax(0, 1fr);
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "hey   photo todo"
+    "im    photo tag"
+    ".     photo ones"
+    "acts  acts  acts";
+  column-gap: clamp(8px, 2.5vw, 34px);
+  padding-block: clamp(42px, 5vw, 64px) clamp(46px, 7vw, 72px);
+  isolation: isolate;
+}
+
+/* soft red halo behind the photo */
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 42%;
+  width: calc(var(--photo) * 1.5);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  background: radial-gradient(circle, rgba(222, 52, 40, 0.1), transparent 65%);
+  pointer-events: none;
 }
 
 .hero-title {
@@ -411,36 +438,58 @@ p {
 
 .hero-word {
   display: block;
-  position: absolute;
+  position: relative;
   z-index: 2;
   font-size: var(--word);
-  line-height: 0.45;
+  line-height: 0.85;
   white-space: nowrap;
+  animation: word-in 0.9s var(--ease-spring) both;
+  transition: color 0.2s, transform 0.3s var(--ease-spring);
+}
+
+.hero-word:hover {
+  color: var(--ink);
+  transform: rotate(-3deg) scale(1.04);
 }
 
 .hero-word--hey {
-  right: calc(60% + var(--photo) * 0.42);
-  top: calc(var(--photo-h) * 0.2);
+  grid-area: hey;
+  justify-self: end;
+  align-self: end;
+  margin-right: var(--tuck);
+  animation-delay: 0.1s;
 }
 
 .hero-word--im {
-  right: calc(65% + var(--photo) * 0.3);
-  top: calc(var(--photo-h) * 0.6);
+  grid-area: im;
+  justify-self: end;
+  align-self: center;
+  margin-right: var(--tuck);
+  animation-delay: 0.25s;
 }
 
 .hero-word--ones {
-  left: calc(60% + var(--photo) * 0.36);
-  top: calc(var(--photo-h) * 0.78);
+  grid-area: ones;
+  justify-self: start;
+  align-self: end;
+  margin-left: var(--tuck);
+  animation-delay: 0.4s;
+}
+
+@keyframes word-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.4em) rotate(4deg);
+  }
 }
 
 .hero-todo {
-  position: absolute;
-  z-index: 2;
-  left: calc(60% + var(--photo) * 0.62);
-  top: calc(var(--photo-h) * 0.18);
-  margin: 0;
+  grid-area: todo;
+  align-self: center;
+  justify-self: start;
+  margin: 0 0 0 clamp(12px, 3vw, 56px);
   font-family: var(--font-mono);
-  font-size: clamp(20px, 2.2vw, 32px);
+  font-size: clamp(18px, 2vw, 32px);
   line-height: 1.2;
   color: var(--signal);
   white-space: nowrap;
@@ -450,25 +499,93 @@ p {
   color: var(--pencil);
 }
 
+/* blinking caret after "hire ones" */
+.hero-todo::after {
+  content: "";
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  margin-left: 0.15em;
+  vertical-align: -0.15em;
+  background: var(--signal);
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+
 .hero-tag {
-  position: absolute;
-  z-index: 2;
-  left: calc(60% + var(--photo) * 0.42);
-  top: calc(var(--photo-h) * 0.58 - 62px);
-  margin: 0;
-  max-width: 96ch;
+  grid-area: tag;
+  align-self: center;
+  justify-self: start;
+  margin: 0 0 0 clamp(12px, 3vw, 56px);
+  max-width: 30ch;
+  border-left: 3px solid var(--signal);
+  padding-left: 12px;
 }
 
 .hero-photo {
+  grid-area: photo;
   position: relative;
   z-index: 1;
-  width: var(--photo);
+  width: 100%;
+  transition: transform 0.5s var(--ease-spring);
+}
+
+.hero-photo:hover {
+  transform: rotate(-1.5deg) translateY(-6px);
 }
 
 .hero-photo img {
   position: relative;
   width: 100%;
+  height: auto;
   filter: drop-shadow(0 10px 18px rgba(28, 27, 26, 0.12));
+}
+
+/* rotating "open to work" stamp pinned to the photo */
+.hero-stamp {
+  position: absolute;
+  z-index: 3;
+  left: -22%;
+  bottom: 6%;
+  width: clamp(84px, 8vw, 124px);
+  aspect-ratio: 1;
+  color: var(--signal);
+  pointer-events: none;
+}
+
+.hero-stamp svg {
+  width: 100%;
+  height: 100%;
+  animation: spin 14s linear infinite;
+}
+
+.hero-stamp text {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  fill: currentColor;
+}
+
+.hero-stamp-dot {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 22%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  background: var(--signal);
+  rotate: 45deg;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .hero-squiggles {
@@ -516,12 +633,13 @@ p {
 }
 
 .hero-actions {
+  grid-area: acts;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 80px;
-  margin-top: clamp(48px, 6vw, 80px);
+  gap: clamp(20px, 5vw, 80px);
+  margin-top: clamp(32px, 5vw, 64px);
 }
 
 /* ---------- marquee ---------- */
@@ -538,7 +656,7 @@ p {
 
 .marquee-wrap {
   overflow: hidden;
-  padding-block: 12px;
+  padding-block: 2px;
 }
 
 .marquee-track {
@@ -1053,13 +1171,13 @@ a.repo-card:hover h3 {
 
 .float-cta {
   position: fixed;
-  right: max(16px, env(safe-area-inset-right, 0px));
-  bottom: max(16px, env(safe-area-inset-bottom, 0px));
+  right: max(18px, env(safe-area-inset-right, 0px));
+  bottom: max(25px, env(safe-area-inset-bottom, 0px));
   z-index: 40;
   display: grid;
   place-items: center;
-  gap: 2px;
-  width: 76px;
+  gap: 4px;
+  width: 96px;
   aspect-ratio: 1;
   background: var(--signal);
   color: var(--paper);
@@ -1074,7 +1192,7 @@ a.repo-card:hover h3 {
 }
 
 .float-cta span {
-  font-size: 20px;
+  font-size: 24px;
   line-height: 1;
 }
 
@@ -1175,8 +1293,9 @@ a.repo-card:hover h3 {
   }
 
   .hero {
-    display: grid;
+    --word: clamp(56px, 17vw, 120px);
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: none;
     grid-template-areas:
       "hey   todo"
       "photo photo"
@@ -1186,56 +1305,59 @@ a.repo-card:hover h3 {
     align-items: end;
   }
 
-  .hero-word,
-  .hero-todo,
-  .hero-tag {
-    position: static;
+  .hero::before {
+    top: 36%;
+    width: 110%;
   }
 
-  .hero-word {
-    font-size: clamp(64px, 17vw, 120px);
+  .hero-word--hey,
+  .hero-word--im,
+  .hero-word--ones {
+    margin: 0;
+    align-self: end;
   }
 
-  .hero-word--hey {
-    grid-area: hey;
+  .hero-word--hey,
+  .hero-word--im {
     justify-self: start;
   }
 
+  .hero-word--im,
+  .hero-word--ones {
+    margin-top: -0.3em;
+  }
+
+  .hero-word--ones {
+    justify-self: end;
+  }
+
   .hero-todo {
-    grid-area: todo;
     justify-self: end;
     align-self: center;
-    font-size: clamp(14px, 3.6vw, 24px);
+    margin: 0;
+    font-size: clamp(13px, 3.6vw, 24px);
   }
 
   .hero-photo {
-    grid-area: photo;
-    width: min(78%, 320px);
+    width: min(78%, 340px);
     justify-self: center;
     margin-top: 12px;
   }
 
-  .hero-word--im {
-    grid-area: im;
-    justify-self: start;
-    margin-top: -0.35em;
-  }
-
-  .hero-word--ones {
-    grid-area: ones;
-    justify-self: end;
-    margin-top: -0.35em;
+  .hero-stamp {
+    left: -8%;
+    width: 84px;
   }
 
   .hero-tag {
-    grid-area: tag;
-    margin: 20px 0 0;
+    justify-self: start;
+    margin: 24px 0 0;
+    max-width: none;
   }
 
   .hero-actions {
-    grid-area: acts;
     justify-content: flex-start;
-    margin-top: 20px;
+    margin-top: 24px;
   }
 }
 
@@ -1274,7 +1396,7 @@ a.repo-card:hover h3 {
   }
 
   .float-cta {
-    width: 64px;
+    width: 84px;
   }
 }
 

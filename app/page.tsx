@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import BlurList from "./components/BlurList";
 import GitHubShowcase from "./components/GitHubShowcase";
 import ProjectShowcase from "./components/ProjectShowcase";
@@ -11,7 +11,7 @@ import { districtProjects } from "./projects";
 
 const featuredProject = {
   title: "PrimeProfs",
-  label: "EdTech platform · 2024 – now",
+  label: "EdTech platform Â· 2024 â€“ now",
   caption: "the one i'm building right now.",
   description:
     "a learning platform shaped around product thinking, scalable architecture and ai-assisted education. students use it to learn faster; i use it to prove that edtech doesn't have to feel like homework.",
@@ -20,10 +20,10 @@ const featuredProject = {
 
 const timelineStations = [
   {
-    year: "2024 – now",
+    year: "2024 â€“ now",
     title: "Full-Stack Product Engineer",
     subtitle: "PrimeProfs",
-    location: "EdTech · Product Engineering",
+    location: "EdTech Â· Product Engineering",
     detail:
       "building primeprofs, an ai-assisted edtech platform students use to learn more effectively."
   },
@@ -33,39 +33,39 @@ const timelineStations = [
     subtitle: "Caustaza Group LTD"
   },
   {
-    year: "Jun – Jul 2024",
-    title: "Full-Stack Developer · Internship",
+    year: "Jun â€“ Jul 2024",
+    title: "Full-Stack Developer Â· Internship",
     subtitle: "Smartovate",
-    location: "London, UK · Remote",
+    location: "London, UK Â· Remote",
     detail:
       "contributed to smartovate's ai-driven productivity product for startups and teams."
   },
   {
-    year: "Jul – Aug 2023",
-    title: "Web Developer · Internship",
+    year: "Jul â€“ Aug 2023",
+    title: "Web Developer Â· Internship",
     subtitle: "Paysan du Cap Bon",
-    location: "Tunis · On-site",
+    location: "Tunis Â· On-site",
     detail: "automated a billing system with symfony 5 and mysql."
   },
   {
-    year: "Feb – Jun 2022",
-    title: "Full-Stack JS Engineer · End-of-studies",
+    year: "Feb â€“ Jun 2022",
+    title: "Full-Stack JS Engineer Â· End-of-studies",
     subtitle: "Orange Digital Center",
-    location: "Tunis · On-site",
+    location: "Tunis Â· On-site",
     detail:
       "built a recruitment-automation and candidate-assessment platform: pre-selection, online testing and evaluation."
   },
   {
-    year: "Aug – Sep 2021",
-    title: "Software Testing · Internship",
+    year: "Aug â€“ Sep 2021",
+    title: "Software Testing Â· Internship",
     subtitle: "BIAT",
-    location: "Tunisia · Java, Katalon Studio",
+    location: "Tunisia Â· Java, Katalon Studio",
     detail:
       "designed and automated functional test scenarios to validate web applications."
   },
   {
-    year: "Jun – Jul 2021",
-    title: "Web Developer · Internship",
+    year: "Jun â€“ Jul 2021",
+    title: "Web Developer Â· Internship",
     subtitle: "Cloud Master Tunisie",
     location: "Tunis",
     detail:
@@ -99,7 +99,7 @@ const techStack = [
 
 const labProjects = [
   {
-    year: "2023 – 2024",
+    year: "2023 â€“ 2024",
     title: "Microservice Architecture",
     description:
       "a university room-reservation system split into services: spring boot, node.js and angular, with h2 and mysql picked per service.",
@@ -116,7 +116,7 @@ const labProjects = [
     ]
   },
   {
-    year: "2023 – 2024",
+    year: "2023 â€“ 2024",
     title: "CI/CD DevOps Pipeline",
     description:
       "jenkins + docker pipeline with prometheus and grafana watching it, and email alerts when something breaks.",
@@ -124,7 +124,7 @@ const labProjects = [
     repos: []
   },
   {
-    year: "2022 – 2023",
+    year: "2022 â€“ 2023",
     title: "MazeBank",
     description:
       "one bank, three clients: javafx, symfony and codenameone sharing a single mysql database.",
@@ -215,19 +215,22 @@ export default function Home() {
               <path pathLength={1} className="spark" d="M70 168 l 5 -14 l 5 14 l 14 5 l -14 5 l -5 14 l -5 -14 l -14 -5 z" />
             </svg>
             <Image
-              src="/assets/ones-hero.png"
+              src="/assets/ones-hero.webp"
               alt="Ones taking a mirror selfie in a striped tee, smiling"
-              width={860}
-              height={1121}
+              width={1720}
+              height={2242}
               priority
             />
+            <div className="hero-stamp" aria-hidden="true">              
+              <span className="hero-stamp-dot" />
+            </div>
           </div>
 
           <div className="hero-actions">
             <a className="bracket bracket--solid" href="#work">
               <SwapLabel>see the work</SwapLabel>
             </a>
-            <a className="bracket" href="/assets/ones-cv.pdf" download>
+            <a className="bracket bracket--solid2" href="/assets/ones-cv.pdf" download>
               <SwapLabel>grab my cv</SwapLabel>
             </a>
           </div>
@@ -239,7 +242,7 @@ export default function Home() {
             {[...techStack, ...techStack].map((tech, index) => (
               <span className="marquee-item" key={`${tech}-${index}`}>
                 {tech}
-                <b aria-hidden="true">♥</b>
+                <b aria-hidden="true">🖤</b>
               </span>
             ))}
           </div>
@@ -266,7 +269,7 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <span className="mono muted">things i&apos;m good at ↓</span>
+              <span className="mono muted">things i&apos;m good at â†“</span>
               <BlurList items={capabilities} />
             </div>
           </div>
@@ -433,11 +436,11 @@ export default function Home() {
 
       <footer className="footer wrap">
         <span>ones ben rhaime ♥ software engineer</span>
-        <span>made in tunis · {new Date().getFullYear()}</span>
+        <span>made in tunis Â· {new Date().getFullYear()}</span>
       </footer>
 
       <a className="float-cta" href="#contact" aria-label="Contact Ones">
-        <span aria-hidden="true">&gt;_</span>
+        <span aria-hidden="true">👋</span>
         say hi
       </a>
     </>
