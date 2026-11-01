@@ -32,7 +32,6 @@ Next.js 14 with the **App Router** (`app/`). TypeScript, `strict` mode. Styling 
 
 - `next.config.mjs` sets `images.unoptimized: true` and allowlists `ghchart.rshah.org`. Any new remote `next/image` host must be added there.
 - GitHub username comes from `NEXT_PUBLIC_GITHUB_USERNAME`, falling back to `onesbenrhaime`.
-- A legacy `pages/` directory still holds `_app.tsx` and `_document.tsx`; the App Router is the active system.
 - `tsconfig.json` targets `es5`.
 
 ## Unrelated additional directory
