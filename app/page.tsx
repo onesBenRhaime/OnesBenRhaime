@@ -7,7 +7,27 @@ import ScrollProgress from "./components/ScrollProgress";
 import SiteNav from "./components/SiteNav";
 import SwapLabel from "./components/SwapLabel";
 import Ticker from "./components/Ticker";
+import { getAllPosts } from "../lib/blog";
+import { articles } from "./articles";
 import { districtProjects } from "./projects";
+
+// On-site posts (/blog/<slug>) and articles published elsewhere, newest first.
+const latestArticles = [
+  ...getAllPosts().map((post) => ({
+    title: post.title,
+    url: `/blog/${post.slug}`,
+    platform: "",
+    date: post.date,
+    excerpt: post.description,
+    tags: post.tags
+  })),
+  ...articles
+]
+  .sort((a, b) => b.date.localeCompare(a.date))
+  .slice(0, 6);
+
+const formatDate = (iso: string) =>
+  new Date(iso).toLocaleDateString("en-GB", { month: "short", year: "numeric" });
 
 const featuredProject = {
   title: "PrimeProfs",
@@ -385,9 +405,69 @@ export default function Home() {
 
         <GitHubShowcase />
 
+        <RevealSection className="section wrap" id="blog">
+          <div className="section-heading">
+            <span className="eyebrow">06 / blog</span>
+            <h2>Things I wrote down</h2>
+            <p className="section-lead">
+              notes from building products: frontend, backend, databases, ai.
+              published wherever the readers are.
+            </p>
+          </div>
+          <ol className="rows">
+            {latestArticles.length === 0 && (
+              <li className="row">
+                <span className="row-index">00</span>
+                <div className="row-main">
+                  <h3>First article in progress</h3>
+                  <p>drafting it now. check back soon.</p>
+                </div>
+              </li>
+            )}
+            {latestArticles.map((article, index) => (
+              <li className="row" key={article.url}>
+                <span className="row-index">{String(index + 1).padStart(2, "0")}</span>
+                <div className="row-main">
+                  <h3>{article.title}</h3>
+                  {article.excerpt && <p>{article.excerpt}</p>}
+                  {article.tags && (
+                    <ul className="tag-row" aria-label="Topics">
+                      {article.tags.map((tag) => (
+                        <li key={tag}>{tag}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+                <div className="row-side">
+                  <time className="mono muted" dateTime={article.date}>
+                    {formatDate(article.date)}
+                  </time>
+                  {article.platform ? (
+                    <a
+                      className="bracket"
+                      href={article.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <SwapLabel>{`read on ${article.platform.toLowerCase()}`}</SwapLabel>
+                    </a>
+                  ) : (
+                    <a className="bracket" href={article.url}>
+                      <SwapLabel>read it</SwapLabel>
+                    </a>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ol>
+          <a className="bracket bracket--solid" href="/blog">
+            <SwapLabel>all articles</SwapLabel>
+          </a>
+        </RevealSection>
+
         <RevealSection className="section wrap" id="faq">
           <div className="section-heading">
-            <span className="eyebrow">06 / faq</span>
+            <span className="eyebrow">07 / faq</span>
             <h2>Questions you were going to ask</h2>
           </div>
           <ol className="faq">
