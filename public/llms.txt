@@ -1,0 +1,30 @@
+# Ones Ben Rhaime
+
+> Full-stack product engineer based in Tunis, Tunisia. Builds AI-powered products and scalable web applications end to end: frontend, backend, databases, data migration and technical SEO. Open to full-stack, frontend, backend and product engineering roles, remote or on-site.
+
+## Roles
+- Full-Stack Developer / Full-Stack Engineer
+- Product Engineer / Full-Stack Product Engineer
+- Frontend Developer (React, Next.js, TypeScript)
+- Backend Developer (Node.js, NestJS, REST APIs, microservices)
+
+## Skills
+- Frontend: React, Next.js, TypeScript, responsive UI, performance
+- Backend: Node.js, NestJS, Express, REST APIs, microservice architecture
+- Databases: PostgreSQL, MongoDB, schema design, data migration
+- AI: LLM integration, AI-powered product features
+- SEO: technical SEO, structured data, Core Web Vitals
+- DevOps: CI/CD pipelines, Docker
+
+## Experience
+- Full-Stack Product Engineer — PrimeProfs (AI-powered EdTech)
+- Frontend & API Developer — Caustaza Group LTD
+- Full-Stack JS Engineer — Orange Digital Center (Tunis)
+- Internships: Smartovate, Paysan du Cap Bon, BIAT, Cloud Master Tunisie
+
+## Links
+- Portfolio: https://ones-benrhaime.vercel.app
+- CV (PDF): https://ones-benrhaime.vercel.app/assets/ones-cv.pdf
+- GitHub: https://github.com/onesbenrhaime
+- LinkedIn: https://www.linkedin.com/in/ones-ben-rhaime/
+- Email: ones.benrhaime@gmail.com

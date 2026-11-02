@@ -8,30 +8,55 @@ const FONTS_URL =
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://onesbenrhaime.com";
+  "https://ones-benrhaime.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Ones Land | Ones Ben Rhaime",
+    default: "Ones Ben Rhaime — Full-Stack & Product Engineer (React, Next.js, NestJS, AI)",
     template: "%s | Ones Ben Rhaime"
   },
   description:
-    "Welcome to Ones Land — explore the world behind the products of Ones Ben Rhaime, a software engineer building AI-powered educational products and scalable web applications.",
+    "Ones Ben Rhaime is a full-stack product engineer in Tunis building AI-powered products and scalable web apps: React / Next.js frontend, Node.js / NestJS backend, databases, data migration, technical SEO. Open to full-stack, frontend, backend and product engineering roles (remote or on-site).",
+  applicationName: "Ones Land",
   keywords: [
     "Ones Ben Rhaime",
-    "Software Engineer",
     "Full Stack Developer",
+    "Full-Stack Engineer",
+    "Ingénieur Full Stack",
+    "Développeur Full Stack",
     "Product Engineer",
-    "React",
-    "Next.js",
-    "NestJS",
+    "Full-Stack Product Engineer",
+    "Product Full-Stack Developer",
+    "Frontend Developer",
+    "Développeur Frontend",
+    "Backend Developer",
+    "Développeur Backend",
+    "Software Engineer",
+    "React Developer",
+    "Next.js Developer",
+    "NestJS Developer",
+    "Node.js Developer",
+    "TypeScript Developer",
+    "Database Design",
+    "Base de données",
+    "PostgreSQL",
+    "MongoDB",
+    "Data Migration",
+    "Migration de données",
+    "Technical SEO",
+    "AI Engineer",
     "AI Integration",
+    "LLM Integration",
     "EdTech",
-    "PrimeProfs"
+    "PrimeProfs",
+    "Full Stack Developer Tunisia",
+    "Développeur Full Stack Tunis",
+    "Remote Full Stack Developer"
   ],
-  authors: [{ name: "Ones Ben Rhaime" }],
+  authors: [{ name: "Ones Ben Rhaime", url: siteUrl }],
   creator: "Ones Ben Rhaime",
+  category: "technology",
   alternates: {
     canonical: "/"
   },
@@ -45,16 +70,19 @@ export const metadata: Metadata = {
     }
   },
   icons: {
-    icon: "/assets/ones-land/ones-no-bg.png",
     apple: "/assets/ones-land/ones-no-bg.png"
   },
   openGraph: {
-    title: "Ones Land | Ones Ben Rhaime",
+    title: "Ones Ben Rhaime — Full-Stack & Product Engineer",
     description:
-      "Explore the world behind the products — AI-powered educational products and scalable web applications.",
+      "Full-stack product engineer shipping AI-powered products: React / Next.js, Node.js / NestJS, databases, data migration and SEO.",
     url: "/",
     siteName: "Ones Land",
-    type: "website",
+    locale: "en_US",
+    alternateLocale: ["fr_FR"],
+    type: "profile",
+    firstName: "Ones",
+    lastName: "Ben Rhaime",
     images: [
       {
         url: "/assets/ones-banner.png",
@@ -66,34 +94,69 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ones Land | Ones Ben Rhaime",
+    title: "Ones Ben Rhaime — Full-Stack & Product Engineer",
     description:
-      "Explore the world behind the products — AI-powered educational products and scalable web applications.",
+      "Full-stack product engineer shipping AI-powered products: React / Next.js, Node.js / NestJS, databases, data migration and SEO.",
     images: ["/assets/ones-banner.png"]
   }
 };
 
+// ProfilePage + Person: what Google and AI assistants read to understand who this is.
 const personJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Ones Ben Rhaime",
+  "@type": "ProfilePage",
   url: siteUrl,
-  jobTitle: "Software Engineer / Product Engineer",
-  description:
-    "Software engineer building AI-powered educational products and scalable web applications.",
-  sameAs: [
-    "https://github.com/onesbenrhaime",
-    "https://www.linkedin.com/in/ones-ben-rhaime/"
-  ],
-  knowsAbout: [
-    "React",
-    "Next.js",
-    "NestJS",
-    "TypeScript",
-    "AI Integration",
-    "EdTech",
-    "System Design"
-  ]
+  mainEntity: {
+    "@type": "Person",
+    "@id": `${siteUrl}/#person`,
+    name: "Ones Ben Rhaime",
+    url: siteUrl,
+    email: "mailto:ones.benrhaime@gmail.com",
+    image: `${siteUrl}/assets/ones-banner.png`,
+    jobTitle: "Full-Stack Product Engineer",
+    description:
+      "Full-stack product engineer building AI-powered products and scalable web applications — frontend (React, Next.js), backend (Node.js, NestJS), databases, data migration and technical SEO.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Tunis",
+      addressCountry: "TN"
+    },
+    worksFor: { "@type": "Organization", name: "PrimeProfs" },
+    hasOccupation: [
+      "Full-Stack Developer",
+      "Product Engineer",
+      "Frontend Developer",
+      "Backend Developer"
+    ].map((name) => ({ "@type": "Occupation", name })),
+    sameAs: [
+      "https://github.com/onesbenrhaime",
+      "https://www.linkedin.com/in/ones-ben-rhaime/"
+    ],
+    knowsLanguage: ["en", "fr", "ar"],
+    knowsAbout: [
+      "Full-Stack Development",
+      "Product Engineering",
+      "Frontend Development",
+      "Backend Development",
+      "React",
+      "Next.js",
+      "Node.js",
+      "NestJS",
+      "TypeScript",
+      "REST APIs",
+      "Microservices",
+      "Database Design",
+      "PostgreSQL",
+      "MongoDB",
+      "Data Migration",
+      "Technical SEO",
+      "AI Integration",
+      "LLM Applications",
+      "CI/CD",
+      "System Design",
+      "EdTech"
+    ]
+  }
 };
 
 export default function RootLayout({

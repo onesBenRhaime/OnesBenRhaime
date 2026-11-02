@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <g transform="translate(-2.5 0)">
+    <!-- offset ink shadow -->
+    <path fill="#111" fill-opacity=".18" fill-rule="evenodd" d="M17.5 5.5h1a7 7 0 0 1 7 7v9a7 7 0 0 1-7 7h-1a7 7 0 0 1-7-7v-9a7 7 0 0 1 7-7Zm0 5.2a1.6 1.6 0 0 0-1.6 1.6v9.4a1.6 1.6 0 0 0 1.6 1.6h1a1.6 1.6 0 0 0 1.6-1.6v-9.4a1.6 1.6 0 0 0-1.6-1.6Z"/>
+    <rect x="25.5" y="23.5" width="5" height="5" fill="#111" fill-opacity=".18"/>
+    <!-- the O. -->
+    <path fill="#e33529" fill-rule="evenodd" d="M15.5 3.5h1a7 7 0 0 1 7 7v9a7 7 0 0 1-7 7h-1a7 7 0 0 1-7-7v-9a7 7 0 0 1 7-7Zm0 5.2a1.6 1.6 0 0 0-1.6 1.6v9.4a1.6 1.6 0 0 0 1.6 1.6h1a1.6 1.6 0 0 0 1.6-1.6v-9.4a1.6 1.6 0 0 0-1.6-1.6Z"/>
+    <rect x="23.5" y="21.5" width="5" height="5" fill="#e33529"/>
+  </g>
+</svg>
